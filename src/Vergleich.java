@@ -15,7 +15,7 @@ public class Vergleich {
         }
 
         if (x < 5 || x > 15) {
-            System.out.println("Außerhalb des Bereichs");
+            System.out.println("Außerhalb des Bereich");
         } else {
             System.out.println("false");
         }
