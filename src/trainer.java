@@ -20,14 +20,28 @@ public class trainer {
         }
 
         */
-        String
-        String stringCase;
-        if (stringCase.equals("gross")) {
-            System.out.println(tier.toLowerCase());
-        } else if (stringCase.equals("klein")) {
-            System.out.println(tier.toLowerCase());
-        } else if (stringCase.equals("grossUndKlein")) {
 
-        }
+
+        /*int a = 1;
+        int b = 2;
+        int c = 3;
+        wenn "True" wird der wert nach dem Fragezeichen zugewiesen, ansonsten nach doppelpunkt
+        int anwesend =
+
+        System.out.println(Math.max(a, Math.max(b, c)));*/
+
+
+        int anwesend = 12;
+        boolean darfTeilnehmen;
+        int einheiten = 15;
+        darfTeilnehmen = anwesend >= einheiten * 0.8;
+        System.out.println(darfTeilnehmen);
+        System.out.println(12 * 0.8);
+
+        //>= 3 Jahre sql und java = Profi; 3 Jahre java ODER sql = Fortgeschritten;<=  2 Jahre java UND sql = Anfänger;
+
+        String wissensstand = "Lalala";
+
+
     }
 }
