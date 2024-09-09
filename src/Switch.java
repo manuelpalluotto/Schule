@@ -5,7 +5,6 @@ public class Switch {
         switch (day) {
             case 1:
                 ergebnis = "Montag";
-                break;
             case 2:
                 ergebnis = "Dienstag";
                 break;

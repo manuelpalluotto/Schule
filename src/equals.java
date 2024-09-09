@@ -1,19 +1,20 @@
 public class equals {
     public static void main(String[] args) {
 
-        String eins = "Mahlzeit!";
-        String zwei = "Mahlzeit!";
-        System.out.println(eins.equals(zwei));
+        /* x/3 ohne rest = Fizz
+        x/5 ohne rest = Buzz
+        x/3 && x/5 ohne rest = FizzBuzz
+         */
 
-        String drei = "Programmieren";
-        String vier = "Ich liebe das Programmieren!";
-        System.out.println(vier.contains("Programmieren"));
-        System.out.println(vier.indexOf("I"));
-        System.out.println(vier.toUpperCase());
-        System.out.println(vier.length());
+        double preis = 10;
+        int anzahlArtikel = 9;
+        // int = 10 10% - int = 20 50% --> Gesamtpreis?
 
-        String fünf = "Java";
-        System.out.println(fünf.charAt(2));
-
+        if (anzahlArtikel >= 10 && anzahlArtikel < 20) {
+            preis *= 0.9;
+        } else if (anzahlArtikel >= 20) {
+            preis *= 0.5;
+        }
+        System.out.println(preis);
     }
 }
