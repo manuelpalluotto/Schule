@@ -18,9 +18,8 @@ public class forech {
         System.out.println(sum);
 
         String charFinden = "Char finden.";
-        for (String aufgabe : charFinden) {
+        //for (String aufgabe : charFinden) {
 
-        }
     }
 }
 
