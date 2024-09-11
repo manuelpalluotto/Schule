@@ -31,17 +31,20 @@ public class trainer {
         System.out.println(Math.max(a, Math.max(b, c)));*/
 
 
-        int anwesend = 12;
-        boolean darfTeilnehmen;
-        int einheiten = 15;
-        darfTeilnehmen = anwesend >= einheiten * 0.8;
-        System.out.println(darfTeilnehmen);
-        System.out.println(12 * 0.8);
+//        int anwesend = 12;
+//        boolean darfTeilnehmen;
+//        int einheiten = 15;
+//        darfTeilnehmen = anwesend >= einheiten * 0.8;
+//        System.out.println(darfTeilnehmen);
+//        System.out.println(12 * 0.8);
+//
+//        //>= 3 Jahre sql und java = Profi; 3 Jahre java ODER sql = Fortgeschritten;<=  2 Jahre java UND sql = Anfänger;
+//
+//        String wissensstand = "Lalala";
 
-        //>= 3 Jahre sql und java = Profi; 3 Jahre java ODER sql = Fortgeschritten;<=  2 Jahre java UND sql = Anfänger;
-
-        String wissensstand = "Lalala";
-
-
+        int[] zahlen;
+        for (int i = 1; i < 4; i++) {
+            System.out.println(i);
+        }
     }
 }
