@@ -26,5 +26,5 @@ public class forech {
 
 // int[] ursprungsInt = {1, 2, 3, 4, 5}
 // for (int neueInt : ursprungsInt){
-//      System.out.println(neueInt);
+//      System.out.println(neuent);
 // }
