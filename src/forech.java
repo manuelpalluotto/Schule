@@ -13,12 +13,11 @@ public class forech {
             count++;
             if (count == 5) {
                 break;
-            //}
+            }
         }
         System.out.println(sum);
 
-        String charFinden = "Char finden.";
-        //for (String aufgabe : charFinden) {
+
 
     }
 }

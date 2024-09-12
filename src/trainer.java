@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public class trainer {
     public static void main(String[] args) {
 
@@ -42,9 +47,79 @@ public class trainer {
 //
 //        String wissensstand = "Lalala";
 
-        int[] zahlen;
-        for (int i = 1; i < 4; i++) {
+//        int[] zahlen;
+//        for (int i = 1; i < 4; i++) {
+//            System.out.println(i);
+//        }
+//        char[] altesArray = {'a','b','c'};
+//        char[] neuesArray = new char[altesArray.length];
+//        for (int i1 = 0; i1 < altesArray.length; i1++) {
+//            neuesArray[i1] = altesArray[i1];
+//            System.out.print(neuesArray[i1] + " ");
+//        }
+
+//        String[] zimmerpflanzen = {"Orchidee", "Lilie", "Palme"};
+//        String meineLieblingspflanze = zimmerpflanzen[1];
+//        System.out.println(meineLieblingspflanze);
+
+//        String[] kroepfchen = {"bla", "fasel", "lala"};
+//        String[] toepfchen = new String[] {"Schlechte Linse", "Gute Linse", "Sehr gute Linse"};
+//        toepfchen[0] = kroepfchen[1];
+//        System.out.println(toepfchen[0]);
+
+
+
+//        String[] array = {"la", "li", "lu", "lo"};
+//        int[] fasel = {1,2,3,4,5,6};
+//        fasel = Arrays.copyOf(fasel, fasel.length + 1);
+//        fasel[fasel.length - 1] = 7;
+//        System.out.println(Arrays.toString(fasel));
+//        int[] fasel2 = {1,2,3,4};
+//        System.out.println(Arrays.equals(fasel, fasel2));
+//
+//        int[][] zahlen = {{1,2}, {3,4}, {5,6}};
+//        System.out.println(Arrays.deepToString(zahlen));
+//
+//        List<String> tiere = new ArrayList<>();
+//        Collections.addAll(tiere, "schmand", "satze", "maus");
+//        Collections.sort(tiere);
+//        System.out.println(tiere);
+
+//        String[] saengerArray = {"la", "di", "da"};
+//        List<String> saengerList = List.of(saengerArray);
+//        System.out.println(saengerList);
+//        List<String> saengerList = new ArrayList<>();
+//        saengerList.add("la");
+//        saengerList.add("di");
+//        saengerList.add("da");
+//        System.out.println(saengerList);
+//        String[] saengerArray;
+//        saengerArray = saengerList.toArray(new String[1]);
+//        System.out.println(Arrays.toString(saengerArray));
+
+        int i = 5;
+        while (i < 11) {
             System.out.println(i);
+            i++;
         }
+
+
+//
+//        List<Integer> zahlen = new ArrayList<>();
+//        zahlen.add(6);
+//        zahlen.add(7);
+//        zahlen.add(5);
+//        zahlen.add(1);
+//        zahlen.add(2);
+//        zahlen.remove(0);
+//        int zahl;
+//        zahl = zahlen.get(2);
+//        System.out.println(zahl);
+//        System.out.println(zahlen.toString());
+
+//        String gewinner;
+//        Random random = new Random();
+//        gewinner = array[random.nextInt(array.length)];
+//        System.out.println(gewinner);
     }
 }
