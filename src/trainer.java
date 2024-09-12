@@ -1,8 +1,3 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
 public class trainer {
     public static void main(String[] args) {
 
@@ -51,7 +46,7 @@ public class trainer {
 //        for (int i = 1; i < 4; i++) {
 //            System.out.println(i);
 //        }
-//        char[] altesArray = {'a','b','c'};
+//        char[] altesArray = {'a', 'b', 'c'};
 //        char[] neuesArray = new char[altesArray.length];
 //        for (int i1 = 0; i1 < altesArray.length; i1++) {
 //            neuesArray[i1] = altesArray[i1];
@@ -66,7 +61,6 @@ public class trainer {
 //        String[] toepfchen = new String[] {"Schlechte Linse", "Gute Linse", "Sehr gute Linse"};
 //        toepfchen[0] = kroepfchen[1];
 //        System.out.println(toepfchen[0]);
-
 
 
 //        String[] array = {"la", "li", "lu", "lo"};
@@ -111,34 +105,48 @@ public class trainer {
 //            }
 //
 //
-    //            int i = 0;
-    //            while (i <= 10) {
-    //                System.out.println(i);
-    //                i++;                      FALSCH
-    //FALSCH          if (i % 2 != 0) {
-    //                continue;
-    //                }
-    //               }
+//        int i = 1;
+//        while (i <= 10) {
+//            i++;
+//            if (i % 2 != 0)
+//                continue;
+//            System.out.println(i);
+//        }
 
 
-
-
-        List<Integer> zahlen = new ArrayList<>();
-        zahlen.add(6);
-        zahlen.add(7);
-        zahlen.add(5);
-        zahlen.add(1);
-        zahlen.add(2);
-        //zahlen.remove(0);
-        System.out.println(zahlen.size());
-        //int zahl;
-        //zahl = zahlen.get(2);
-        //System.out.println(zahl);
-        //System.out.println(zahlen.toString());
+//        List<Integer> zahlen = new ArrayList<>();
+//        zahlen.add(6);
+//        zahlen.add(7);
+//        zahlen.add(5);
+//        zahlen.add(1);
+//        zahlen.add(2);
+//        zahlen.remove(0);
+//        System.out.println(zahlen.size());
+//        int zahl;
+//        zahl = zahlen.get(2);
+//        System.out.println(zahl);
+//        System.out.println(zahlen.toString());
 
 //        String gewinner;
 //        Random random = new Random();
 //        gewinner = array[random.nextInt(array.length)];
 //        System.out.println(gewinner);
+
+
+//        for (int i1 = 1; i1 < 5; i1 += 1) {
+//            System.out.println("Ich bin");
+//        }
+
+//        for (int i = 1; i < 201; i++) {
+//            if (i % 3 != 0 || i % 16 != 0) {
+//                continue;
+//            }
+//            System.out.println(i);
+//        }
+
+        for (int i = 1900; i < 2100; i += 4) {
+            System.out.println(i);
+        }
     }
+
 }
