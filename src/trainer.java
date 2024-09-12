@@ -97,25 +97,44 @@ public class trainer {
 //        saengerArray = saengerList.toArray(new String[1]);
 //        System.out.println(Arrays.toString(saengerArray));
 
-        int i = 5;
-        while (i < 11) {
-            System.out.println(i);
-            i++;
-        }
-
-
+//            int i = 0;
+//            while (i < 10 && i % 2 == 0) {
+//                i += 2;
+//                System.out.println(i);
+//            }
 //
-//        List<Integer> zahlen = new ArrayList<>();
-//        zahlen.add(6);
-//        zahlen.add(7);
-//        zahlen.add(5);
-//        zahlen.add(1);
-//        zahlen.add(2);
-//        zahlen.remove(0);
-//        int zahl;
-//        zahl = zahlen.get(2);
-//        System.out.println(zahl);
-//        System.out.println(zahlen.toString());
+//            String[] tiere = {"Affe", "Hund", "Katze"};
+//            int j = 0;
+//            while (j < 3) {
+//                System.out.println(tiere[j]);
+//                j++;
+//            }
+//
+//
+    //            int i = 0;
+    //            while (i <= 10) {
+    //                System.out.println(i);
+    //                i++;                      FALSCH
+    //FALSCH          if (i % 2 != 0) {
+    //                continue;
+    //                }
+    //               }
+
+
+
+
+        List<Integer> zahlen = new ArrayList<>();
+        zahlen.add(6);
+        zahlen.add(7);
+        zahlen.add(5);
+        zahlen.add(1);
+        zahlen.add(2);
+        //zahlen.remove(0);
+        System.out.println(zahlen.size());
+        //int zahl;
+        //zahl = zahlen.get(2);
+        //System.out.println(zahl);
+        //System.out.println(zahlen.toString());
 
 //        String gewinner;
 //        Random random = new Random();
