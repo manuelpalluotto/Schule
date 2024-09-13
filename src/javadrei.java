@@ -17,7 +17,7 @@ public class javadrei {
         }
 
 
-        try{
+        try {
             System.out.println("Gib außerdem noch eine Zahl ein: ");
             x = scanner.nextInt();
             System.out.println("Deine Zahl war: " + (x + 1));
@@ -36,4 +36,4 @@ public class javadrei {
             System.out.println("Schnitzer");
         }
     }
- }
+}
