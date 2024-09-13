@@ -195,13 +195,45 @@ public class trainer {
 //        }
 
 
-        int anzahlZeilen = 5;
-        for (int i = 0; i < anzahlZeilen; i++) {
-            for (int j = 0; j < i; j++) {
-                System.out.print(" ");
-            }
-            System.out.println("***");
+//        int anzahlZeilen = 5;
+//        for (int i = 0; i < anzahlZeilen; i++) {
+//            for (int j = 0; j < i; j++) {
+//                System.out.print(" ");
+//            }
+//            System.out.println("***");
+//        }
+
+
+
+
+//        int anzahlZeilen = 9;
+//        for (int i = 0; i <= anzahlZeilen; i++) {
+//            for (int j = 0; j < i; j++) {
+//                System.out.print(i);
+//            }
+//            System.out.println();
+//        }
+
+//        int anzahlZeilen = 23;
+//
+//        for (int i = 1; i <= anzahlZeilen; i++) {
+//            for (int j = 0; j <= (anzahlZeilen - 1) - i; j++) {
+//                System.out.print(".");
+//            }
+//            System.out.println(i);
+//        }
+
+
+        char[][] spielfeld = {
+                {'a','b','c'},
+                {'d','e','f'},
+                {'g','h','i'}
+        };
+
+        for (int i = 0; i < spielfeld.length; i++) {
+            for (int j = 0; j < spielfeld.length)
         }
+
 
 
     }
