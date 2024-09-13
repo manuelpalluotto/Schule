@@ -144,9 +144,66 @@ public class trainer {
 //            System.out.println(i);
 //        }
 
-        for (int i = 1900; i < 2100; i += 4) {
-            System.out.println(i);
+//       for (int i = 1; i < 101; i++) {
+//           if (i % 4 != 0) {
+//            continue;
+//           }
+//           System.out.println(i);
+//       }
+
+//       int[] bla = {1,2,8,3};
+//       int max = bla[0];
+//        for (int i = 0; i < bla.length; i++) {
+//            if(bla[i] > max) {
+//                max = bla[i];
+//            }
+//        }
+//        System.out.println(max);
+
+
+//        for (int i = 1; i < 201; i++) {
+//            if (i % 3 != 0 || i % 16 != 0){
+//                continue;
+//            }
+//            System.out.println(i);
+//        }
+
+//        for (int i = 1900; i < 2100; i++) {
+//            if ((i % 4 == 0 && i % 100 != 0) || (i % 400 == 0)) {
+//                System.out.println(i);
+//            }
+//        }
+
+//        for (int i = 1; i < 101; i++) {
+//            if (i % 4 != 0) {
+//                continue;
+//            }
+//            System.out.println(i);
+//        }
+
+//        for (int i = 4; i <= 16; i += 3){
+//            System.out.print(i + " ");
+//        }
+//        int anzahlZeilen = 3;
+//        char c = '*';
+//        for (int i = 0; i < anzahlZeilen; i++) {
+//            System.out.print(c);
+//            for (int i1 = 0; i1 < 10; i1++) {
+//                System.out.print(c);
+//            }
+//            System.out.println();
+//        }
+
+
+        int anzahlZeilen = 5;
+        for (int i = 0; i < anzahlZeilen; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            System.out.println("***");
         }
+
+
     }
 
 }
