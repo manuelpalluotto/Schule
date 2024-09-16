@@ -1,8 +1,8 @@
-
 import java.util.Scanner;
-public class Main {
+
+public class TicTacToe {
     public static void main(String[] args) {
-        char[][] playingField = {{'1','2','3'},{'4','5','6'},{'7','8','9'}};
+        char[][] playingField = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
         //Das Array wird deklariert und initialisiert und dient uns als Spielfeld
 
         introduction();
@@ -16,47 +16,24 @@ public class Main {
         char c1 = (char) input1;
         for (int x = 0; x < playingField.length; x++) {
             for (int y = 0; y < playingField[x].length; y++) {
-                if (input1 == 'X' || input1 == 'O' ) {
+                if (input1 == 'X' || input1 == 'O') {
                     System.out.println("Dieses Feld wurde bereits belegt, nächster Spieler ist nun an der Reihe!");
                     continue;
-                } if (playingField[x][y] == c1) {
-                    playingField[x][y] = 'X';
                 }
-                System.out.print("\t" + playingField[x][y] + "\t");
+                if (playingField[x][y] == c1) {
+                    playingField[x][y] = 'X';
+                    System.out.print("\t" + playingField[x][y] + "\t");
+                }
             }
             System.out.println();
             System.out.println();
         }
 
 
-
-
-
-
-
         //   Scanner scanner2 = new Scanner(System.in);
 
 
         //   userInput();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //        public static void userInput() {
@@ -76,9 +53,9 @@ public class Main {
         String namenEingabeSpieler2 = scanner2.nextLine();
         System.out.println("Verstanden, willkommen " + namenEingabeSpieler2 + "!");
         System.out.println("Viel Spaß beim nachfolgenden Spiel Tic Tac Toe. Falls du die Regeln nicht kennst, hier einmal erklärt: "
-                +"Jeder Spieler darf nacheinander einen Stein setzen, entweder ein 'X' oder ein 'O'." + "\n" + "Der Spieler, der zuerst"
-                +"drei Steine in eine Reihe, senkrecht oder waagrecht, setzen kann hat gewonnen!" + "\n" + "In diesem speziellen Fall musst du allerdings"
-                +"die Zahl angeben, an dessen Stelle du deinen Stein setzen willst. Viel Spaß!");
+                + "Jeder Spieler darf nacheinander einen Stein setzen, entweder ein 'X' oder ein 'O'." + "\n" + "Der Spieler, der zuerst"
+                + " drei Steine in eine Reihe, senkrecht oder waagrecht, setzen kann hat gewonnen!" + "\n" + "In diesem speziellen Fall musst du allerdings"
+                + " die Zahl angeben, an dessen Stelle du deinen Stein setzen willst. Viel Spaß!");
 
     }
 
@@ -96,3 +73,4 @@ public class Main {
         }
 
     }
+}

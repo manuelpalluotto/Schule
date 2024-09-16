@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class trainer {
     public static void main(String[] args) {
 
@@ -293,7 +290,6 @@ public class trainer {
 //            System.out.println(s);
 //        }
 
-        kgt von a und b ohne rest
 
     }
 
