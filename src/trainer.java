@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class trainer {
     public static void main(String[] args) {
 
@@ -204,8 +207,6 @@ public class trainer {
 //        }
 
 
-
-
 //        int anzahlZeilen = 9;
 //        for (int i = 0; i <= anzahlZeilen; i++) {
 //            for (int j = 0; j < i; j++) {
@@ -223,18 +224,76 @@ public class trainer {
 //            System.out.println(i);
 //        }
 
+//
+//        char[][] spielfeld = {
+//                {'a', 'b', 'c'},
+//                {'d', 'e', 'f'},
+//                {'g', 'h', 'i'}
+//        };
+//
+//        for (char[] row : spielfeld) {
+//            for (char col : row) {
+//                System.out.print(col);
+//            }
+//            System.out.println();
+//        }
 
-        char[][] spielfeld = {
-                {'a','b','c'},
-                {'d','e','f'},
-                {'g','h','i'}
-        };
 
-        for (int i = 0; i < spielfeld.length; i++) {
-            for (int j = 0; j < spielfeld.length)
-        }
+//        for (int y = 0; y < spielfeld.length; y++) {
+//            for (int x = 0; x < spielfeld[y].length; x++) {
+//                System.out.print(spielfeld[y][x]);
+//            }
+//            System.out.println();
+//        }
+//
+//        int anzahlZahlen = 9;
+//        for (int x = 1; x <= anzahlZahlen; x++) {
+//            for (int y = 0; y < x; y++) {
+//                System.out.print(x);
+//            }
+//            System.out.println();
+//        }
 
+//        int anzahlZeilen = 9;
+//        for (int i = 1; i <= anzahlZeilen; i++) {
+//            for (int j = 0; j <= (anzahlZeilen - i) - 1; j++) {
+//                System.out.print(".");
+//            }
+//            System.out.println(i);
+//
+//        }
 
+//        for (int x = 1; x <= anzahlZeilen; x++) {
+//            System.out.println("**********");
+//        }
+
+//        int a = 11;
+//        int b = 212;
+//        for (int x = 100; x < 10000; x++) {
+//            if (x % a == 0 && x % b == 0) {
+//                System.out.println(x);
+//            }
+//        }
+//        int anzahlZeilen = 9;
+//        for (int i = 1; i <= 9; i++) {
+//            for (int j = 0; j <= (9 - 1) - i; j++) {
+//                System.out.print(".");
+//            }
+//            System.out.println(i);
+//        }
+
+//        List<String> essen = new ArrayList<>();
+//        essen.add("banane");
+//        essen.add("apfel");
+//        essen.add("spaghetti");
+//        essen.add("lasagne");
+//        essen.add("ravioli");
+//
+//        for (String s : essen) {
+//            System.out.println(s);
+//        }
+
+        kgt von a und b ohne rest
 
     }
 
