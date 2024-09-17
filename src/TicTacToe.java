@@ -8,13 +8,14 @@ public class TicTacToe {
 
         System.out.println("Willkommen Spieler 1, bitte geben Sie Ihren Namen ein:");
         String namePlayer1 = playerName();
-        System.out.println("Willkommen Spieler 2, bitte geben sie Ihren Namen ein:");
 
+        System.out.println("Willkommen Spieler 2, bitte geben sie Ihren Namen ein:");
         String namePlayer2 = playerName();
         //Die Methode für Namenseingabe wird aufgerufen
 
         introduction();
         //Ein Einleitungstext wird abgerufen
+
 
         drawingThePlayingField(playingField);
         //Mittels einer for-Schleife wird hier durch das Array iteriert und das Spielfeld wird ausgegeben
@@ -26,7 +27,6 @@ public class TicTacToe {
 
             tokenPlayer2(playingField, namePlayer2);
             outputAfterToken(playingField);
-
         }
 
     }
@@ -224,4 +224,58 @@ public class TicTacToe {
 
         }
     }
+
+    public static String gewinner(char[][] playingField, String player1, String player2) {
+        if (playingField[0][0] == 'x' && playingField[1][1] == 'x' && playingField[2][2] == 'x') {
+            System.out.println("Gewinner: " + player1);
+            return player1;
+        } else if (playingField[0][0] == 'o' && playingField[1][1] == 'o' && playingField[2][2] == 'o') {
+            System.out.println("Gewinner: " + player2);
+            return player2;
+        } else if (playingField[2][0] == 'x' && playingField[1][1] == 'x' && playingField[0][2] == 'x') {
+            System.out.println(("Gewinner: " + player1));
+            return player1;
+        } else if (playingField[2][0] == 'o' && playingField[1][1] == 'o' && playingField[0][2] == 'o') {
+            System.out.println("Gewinner: " + player2);
+            return player2;
+        } else if (playingField[0][0] == 'x' && playingField[0][1] == 'x' && playingField[0][2] == 'x') {
+            System.out.println("Gewinner: " + player1);
+            return player1;
+        } else if (playingField[0][0] == 'o' && playingField[0][1] == 'o' && playingField[0][2] == 'o') {
+            System.out.println("Gewinner: " + player2);
+            return player2;
+        } else if (playingField[1][0] == 'x' && playingField[1][1] == 'x' && playingField[1][2] == 'x') {
+            System.out.println("Gewinner: " + player1);
+            return player1;
+        } else if (playingField[1][0] == 'o' && playingField[1][1] == 'o' && playingField[1][2] == 'o') {
+            System.out.println("Gewinner: " + player2);
+            return player2;
+        } else if (playingField[2][0] == 'x' && playingField[2][1] == 'x' && playingField[2][2] == 'x') {
+            System.out.println("Gewinner: " + player1);
+            return player1;
+        } else if (playingField[2][0] == 'o' && playingField[2][1] == 'o' && playingField[2][2] == 'o') {
+            System.out.println("Gewinner: " + player2);
+            return player2;
+        } else if (playingField[0][0] == 'x' && playingField[1][0] == 'x' && playingField[2][0] == 'x') {
+            System.out.println("Gewinner: " + player1);
+            return player1;
+        } else if (playingField[0][0] == 'o' && playingField[1][0] == 'o' && playingField[2][0] == 'o') {
+            System.out.println("Gewinner: " + player2);
+            return player2;
+        } else if (playingField[0][1] == 'x' && playingField[1][1] == 'x' && playingField[2][1] == 'x') {
+            System.out.println("Gewinner: " + player1);
+            return player1;
+        } else if (playingField[0][1] == 'o' && playingField[1][1] == 'o' && playingField[2][1] == 'o') {
+            System.out.println("Gewinner: " + player2);
+            return player2;
+        } else if (playingField[0][2] == 'x' && playingField[1][2] == 'x' && playingField[2][2] == 'x') {
+            System.out.println("Gewinner: " + player1);
+            return player1;
+        } else if (playingField[0][2] == 'o' && playingField[1][2] == 'o' && playingField[2][2] == 'o') {
+            System.out.println("Gewinner: " + player2);
+            return player2;
+        }
+        return "unentschieden!";
+    }
+
 }
