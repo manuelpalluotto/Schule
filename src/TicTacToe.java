@@ -150,13 +150,45 @@ public class TicTacToe {
     public static void tokenPlayer2(char[][] playingField, String nameSpieler2) {
         Scanner scanPlayer2 = new Scanner(System.in);
         System.out.println(nameSpieler2 + ", bitte setzte deinen Spielstein \"o\" auf eine Nummer:");
-        int input = scanPlayer2.nextInt();
-        System.out.println();
-        if (input < 1 || input > 9) {
-            while (input < 1 || input > 9) {
-                System.out.println("Bitte nur Zahlen zwischen 1 und 9!");
-                Scanner scan = new Scanner(System.in);
-                input = scan.nextInt();
+        try {
+            int input = scanPlayer2.nextInt();
+            System.out.println();
+            if (input < 1 || input > 9) {
+                while (input < 1 || input > 9) {
+                    System.out.println("Bitte nur Zahlen zwischen 1 und 9!");
+                    Scanner scan = new Scanner(System.in);
+                    input = scan.nextInt();
+                    switch (input) {
+                        case 1:
+                            playingField[0][0] = 'o';
+                            break;
+                        case 2:
+                            playingField[0][1] = 'o';
+                            break;
+                        case 3:
+                            playingField[0][2] = 'o';
+                            break;
+                        case 4:
+                            playingField[1][0] = 'o';
+                            break;
+                        case 5:
+                            playingField[1][1] = 'o';
+                            break;
+                        case 6:
+                            playingField[1][2] = 'o';
+                            break;
+                        case 7:
+                            playingField[2][0] = 'o';
+                            break;
+                        case 8:
+                            playingField[2][1] = 'o';
+                            break;
+                        case 9:
+                            playingField[2][2] = 'o';
+                            break;
+                    }
+                }
+            } else {
                 switch (input) {
                     case 1:
                         playingField[0][0] = 'o';
@@ -187,36 +219,9 @@ public class TicTacToe {
                         break;
                 }
             }
-        } else {
-            switch (input) {
-                case 1:
-                    playingField[0][0] = 'o';
-                    break;
-                case 2:
-                    playingField[0][1] = 'o';
-                    break;
-                case 3:
-                    playingField[0][2] = 'o';
-                    break;
-                case 4:
-                    playingField[1][0] = 'o';
-                    break;
-                case 5:
-                    playingField[1][1] = 'o';
-                    break;
-                case 6:
-                    playingField[1][2] = 'o';
-                    break;
-                case 7:
-                    playingField[2][0] = 'o';
-                    break;
-                case 8:
-                    playingField[2][1] = 'o';
-                    break;
-                case 9:
-                    playingField[2][2] = 'o';
-                    break;
-            }
+        } catch (InputMismatchException exception) {
+            System.out.println("Wolltest du bescheißen? Als Strafe setzt du einen Zug aus.");
+
         }
     }
 }
