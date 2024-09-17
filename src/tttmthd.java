@@ -41,7 +41,7 @@ public class tttmthd {
                 }
             } catch (InputMismatchException exception) {
                 System.out.println("Warum Buchstaben? Die Anleitung war doch deutlich, nur Zahlen von 1 bis 9!");
-                if (userInput )
+                if (userInput >= 1 || <= 9)
             }
 
         }
