@@ -20,7 +20,7 @@ public class TicTacToe {
         drawingThePlayingField(playingField);
         //Mittels einer for-Schleife wird hier durch das Array iteriert und das Spielfeld wird ausgegeben
 
-        boolean isOver;
+//        boolean isOver;
         while (true) {
             tokenPlayer1(playingField, namePlayer1);
             outputAfterToken(playingField);
@@ -63,76 +63,23 @@ public class TicTacToe {
         System.out.println(nameSpieler1 + ", bitte setzte deinen Spielstein \"x\" auf eine Nummer:");
         Scanner scanPlayer1 = new Scanner(System.in);
         try {
-            int input = scanPlayer1.nextInt();
+            int userInput = scanPlayer1.nextInt();
             System.out.println();
-            if (input < 1 || input > 9) {
-                while (input < 1 || input > 9) {
+            if (userInput < 1 || userInput > 9) {
+                while (userInput < 1 || userInput > 9) {
                     System.out.println("Bitte nur Zahlen zwischen 1 und 9!");
                     Scanner scan = new Scanner(System.in);
-                    input = scan.nextInt();
-                    switch (input) {
-                        case 1:
-                            playingField[0][0] = 'x';
-                            break;
-                        case 2:
-                            playingField[0][1] = 'x';
-                            break;
-                        case 3:
-                            playingField[0][2] = 'x';
-                            break;
-                        case 4:
-                            playingField[1][0] = 'x';
-                            break;
-                        case 5:
-                            playingField[1][1] = 'x';
-                            break;
-                        case 6:
-                            playingField[1][2] = 'x';
-                            break;
-                        case 7:
-                            playingField[2][0] = 'x';
-                            break;
-                        case 8:
-                            playingField[2][1] = 'x';
-                            break;
-                        case 9:
-                            playingField[2][2] = 'x';
-                            break;
-                    }
+                    userInput = scan.nextInt();
+                    turn('x', userInput, playingField);
                 }
             } else {
-                switch (input) {
-                    case 1:
-                        playingField[0][0] = 'x';
-                        break;
-                    case 2:
-                        playingField[0][1] = 'x';
-                        break;
-                    case 3:
-                        playingField[0][2] = 'x';
-                        break;
-                    case 4:
-                        playingField[1][0] = 'x';
-                        break;
-                    case 5:
-                        playingField[1][1] = 'x';
-                        break;
-                    case 6:
-                        playingField[1][2] = 'x';
-                        break;
-                    case 7:
-                        playingField[2][0] = 'x';
-                        break;
-                    case 8:
-                        playingField[2][1] = 'x';
-                        break;
-                    case 9:
-                        playingField[2][2] = 'x';
-                        break;
-                }
+                turn('x', userInput, playingField);
             }
         } catch (InputMismatchException exception) {
-            System.out.println("Wolltest du bescheißen? Als Strafe setzt du einen Zug aus.");
+            System.out.println("Bitte nur eine ZAHL von 1 bis 9!");
+            Scanner scan = new Scanner(System.in);
+            int userInput = scan.nextInt();
+            turn('x', userInput, playingField);
         }
     }
 
@@ -147,135 +94,116 @@ public class TicTacToe {
         }
     }
 
+
     public static void tokenPlayer2(char[][] playingField, String nameSpieler2) {
         Scanner scanPlayer2 = new Scanner(System.in);
         System.out.println(nameSpieler2 + ", bitte setzte deinen Spielstein \"o\" auf eine Nummer:");
         try {
-            int input = scanPlayer2.nextInt();
+            int userInput = scanPlayer2.nextInt();
             System.out.println();
-            if (input < 1 || input > 9) {
-                while (input < 1 || input > 9) {
+            if (userInput < 1 || userInput > 9) {
+                while (userInput < 1 || userInput > 9) {
                     System.out.println("Bitte nur Zahlen zwischen 1 und 9!");
                     Scanner scan = new Scanner(System.in);
-                    input = scan.nextInt();
-                    switch (input) {
-                        case 1:
-                            playingField[0][0] = 'o';
-                            break;
-                        case 2:
-                            playingField[0][1] = 'o';
-                            break;
-                        case 3:
-                            playingField[0][2] = 'o';
-                            break;
-                        case 4:
-                            playingField[1][0] = 'o';
-                            break;
-                        case 5:
-                            playingField[1][1] = 'o';
-                            break;
-                        case 6:
-                            playingField[1][2] = 'o';
-                            break;
-                        case 7:
-                            playingField[2][0] = 'o';
-                            break;
-                        case 8:
-                            playingField[2][1] = 'o';
-                            break;
-                        case 9:
-                            playingField[2][2] = 'o';
-                            break;
-                    }
+                    userInput = scan.nextInt();
+                    turn('o', userInput, playingField);
                 }
             } else {
-                switch (input) {
-                    case 1:
-                        playingField[0][0] = 'o';
-                        break;
-                    case 2:
-                        playingField[0][1] = 'o';
-                        break;
-                    case 3:
-                        playingField[0][2] = 'o';
-                        break;
-                    case 4:
-                        playingField[1][0] = 'o';
-                        break;
-                    case 5:
-                        playingField[1][1] = 'o';
-                        break;
-                    case 6:
-                        playingField[1][2] = 'o';
-                        break;
-                    case 7:
-                        playingField[2][0] = 'o';
-                        break;
-                    case 8:
-                        playingField[2][1] = 'o';
-                        break;
-                    case 9:
-                        playingField[2][2] = 'o';
-                        break;
-                }
+                turn('o', userInput, playingField);
             }
         } catch (InputMismatchException exception) {
-            System.out.println("Wolltest du bescheißen? Als Strafe setzt du einen Zug aus.");
+            System.out.println("Bitte nur eine ZAHL von 1 bis 9!");
+            Scanner scan = new Scanner(System.in);
+            int userInput = scan.nextInt();
+            turn('o', userInput, playingField);
 
         }
     }
 
-    public static String gewinner(char[][] playingField, String player1, String player2) {
-        if (playingField[0][0] == 'x' && playingField[1][1] == 'x' && playingField[2][2] == 'x') {
-            System.out.println("Gewinner: " + player1);
-            return player1;
-        } else if (playingField[0][0] == 'o' && playingField[1][1] == 'o' && playingField[2][2] == 'o') {
-            System.out.println("Gewinner: " + player2);
-            return player2;
-        } else if (playingField[2][0] == 'x' && playingField[1][1] == 'x' && playingField[0][2] == 'x') {
-            System.out.println(("Gewinner: " + player1));
-            return player1;
-        } else if (playingField[2][0] == 'o' && playingField[1][1] == 'o' && playingField[0][2] == 'o') {
-            System.out.println("Gewinner: " + player2);
-            return player2;
-        } else if (playingField[0][0] == 'x' && playingField[0][1] == 'x' && playingField[0][2] == 'x') {
-            System.out.println("Gewinner: " + player1);
-            return player1;
-        } else if (playingField[0][0] == 'o' && playingField[0][1] == 'o' && playingField[0][2] == 'o') {
-            System.out.println("Gewinner: " + player2);
-            return player2;
-        } else if (playingField[1][0] == 'x' && playingField[1][1] == 'x' && playingField[1][2] == 'x') {
-            System.out.println("Gewinner: " + player1);
-            return player1;
-        } else if (playingField[1][0] == 'o' && playingField[1][1] == 'o' && playingField[1][2] == 'o') {
-            System.out.println("Gewinner: " + player2);
-            return player2;
-        } else if (playingField[2][0] == 'x' && playingField[2][1] == 'x' && playingField[2][2] == 'x') {
-            System.out.println("Gewinner: " + player1);
-            return player1;
-        } else if (playingField[2][0] == 'o' && playingField[2][1] == 'o' && playingField[2][2] == 'o') {
-            System.out.println("Gewinner: " + player2);
-            return player2;
-        } else if (playingField[0][0] == 'x' && playingField[1][0] == 'x' && playingField[2][0] == 'x') {
-            System.out.println("Gewinner: " + player1);
-            return player1;
-        } else if (playingField[0][0] == 'o' && playingField[1][0] == 'o' && playingField[2][0] == 'o') {
-            System.out.println("Gewinner: " + player2);
-            return player2;
-        } else if (playingField[0][1] == 'x' && playingField[1][1] == 'x' && playingField[2][1] == 'x') {
-            System.out.println("Gewinner: " + player1);
-            return player1;
-        } else if (playingField[0][1] == 'o' && playingField[1][1] == 'o' && playingField[2][1] == 'o') {
-            System.out.println("Gewinner: " + player2);
-            return player2;
-        } else if (playingField[0][2] == 'x' && playingField[1][2] == 'x' && playingField[2][2] == 'x') {
-            System.out.println("Gewinner: " + player1);
-            return player1;
-        } else if (playingField[0][2] == 'o' && playingField[1][2] == 'o' && playingField[2][2] == 'o') {
-            System.out.println("Gewinner: " + player2);
-            return player2;
-        }
-        return "unentschieden!";
-    }
 
+//    public static String gewinner(char[][] playingField, String player1, String player2) {
+//        if (playingField[0][0] == 'x' && playingField[1][1] == 'x' && playingField[2][2] == 'x') {
+//            System.out.println("Gewinner: " + player1);
+//            return player1;
+//        } else if (playingField[0][0] == 'o' && playingField[1][1] == 'o' && playingField[2][2] == 'o') {
+//            System.out.println("Gewinner: " + player2);
+//            return player2;
+//        } else if (playingField[2][0] == 'x' && playingField[1][1] == 'x' && playingField[0][2] == 'x') {
+//            System.out.println(("Gewinner: " + player1));
+//            return player1;
+//        } else if (playingField[2][0] == 'o' && playingField[1][1] == 'o' && playingField[0][2] == 'o') {
+//            System.out.println("Gewinner: " + player2);
+//            return player2;
+//        } else if (playingField[0][0] == 'x' && playingField[0][1] == 'x' && playingField[0][2] == 'x') {
+//            System.out.println("Gewinner: " + player1);
+//            return player1;
+//        } else if (playingField[0][0] == 'o' && playingField[0][1] == 'o' && playingField[0][2] == 'o') {
+//            System.out.println("Gewinner: " + player2);
+//            return player2;
+//        } else if (playingField[1][0] == 'x' && playingField[1][1] == 'x' && playingField[1][2] == 'x') {
+//            System.out.println("Gewinner: " + player1);
+//            return player1;
+//        } else if (playingField[1][0] == 'o' && playingField[1][1] == 'o' && playingField[1][2] == 'o') {
+//            System.out.println("Gewinner: " + player2);
+//            return player2;
+//        } else if (playingField[2][0] == 'x' && playingField[2][1] == 'x' && playingField[2][2] == 'x') {
+//            System.out.println("Gewinner: " + player1);
+//            return player1;
+//        } else if (playingField[2][0] == 'o' && playingField[2][1] == 'o' && playingField[2][2] == 'o') {
+//            System.out.println("Gewinner: " + player2);
+//            return player2;
+//        } else if (playingField[0][0] == 'x' && playingField[1][0] == 'x' && playingField[2][0] == 'x') {
+//            System.out.println("Gewinner: " + player1);
+//            return player1;
+//        } else if (playingField[0][0] == 'o' && playingField[1][0] == 'o' && playingField[2][0] == 'o') {
+//            System.out.println("Gewinner: " + player2);
+//            return player2;
+//        } else if (playingField[0][1] == 'x' && playingField[1][1] == 'x' && playingField[2][1] == 'x') {
+//            System.out.println("Gewinner: " + player1);
+//            return player1;
+//        } else if (playingField[0][1] == 'o' && playingField[1][1] == 'o' && playingField[2][1] == 'o') {
+//            System.out.println("Gewinner: " + player2);
+//            return player2;
+//        } else if (playingField[0][2] == 'x' && playingField[1][2] == 'x' && playingField[2][2] == 'x') {
+//            System.out.println("Gewinner: " + player1);
+//            return player1;
+//        } else if (playingField[0][2] == 'o' && playingField[1][2] == 'o' && playingField[2][2] == 'o') {
+//            System.out.println("Gewinner: " + player2);
+//            return player2;
+//        }
+//        return "unentschieden!";
+//    }
+
+
+    public static void turn(char player, int userInput, char[][] playingField) {
+        switch (userInput) {
+            case 1:
+                playingField[0][0] = player;
+                break;
+            case 2:
+                playingField[0][1] = player;
+                break;
+            case 3:
+                playingField[0][2] = player;
+                break;
+            case 4:
+                playingField[1][0] = player;
+                break;
+            case 5:
+                playingField[1][1] = player;
+                break;
+            case 6:
+                playingField[1][2] = player;
+                break;
+            case 7:
+                playingField[2][0] = player;
+                break;
+            case 8:
+                playingField[2][1] = player;
+                break;
+            case 9:
+                playingField[2][2] = player;
+                break;
+        }
+    }
 }

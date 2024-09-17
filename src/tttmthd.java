@@ -3,47 +3,83 @@ import java.util.Scanner;
 
 public class tttmthd {
     public static void main(String[] args) {
-        char[][] playingField = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
-        Scanner scanner1 = new Scanner(System.in);
-        int userInput = scanner1.nextInt();
-        while(userInput < 1 || userInput > 9) {
-            Scanner scan = new Scanner(System.in);
-            userInput = scan.nextInt();
-            try {
-                switch (userInput) {
-                    case 1:
-                        playingField[0][0] = 'x';
-                        break;
-                    case 2:
-                        playingField[0][1] = 'x';
-                        break;
-                    case 3:
-                        playingField[0][2] = 'x';
-                        break;
-                    case 4:
-                        playingField[1][0] = 'x';
-                        break;
-                    case 5:
-                        playingField[1][1] = 'x';
-                        break;
-                    case 6:
-                        playingField[1][2] = 'x';
-                        break;
-                    case 7:
-                        playingField[2][0] = 'x';
-                        break;
-                    case 8:
-                        playingField[2][1] = 'x';
-                        break;
-                    case 9:
-                        playingField[2][2] = 'x';
-                        break;
-                }
-            } catch (InputMismatchException exception) {
-                System.out.println("Warum Buchstaben? Die Anleitung war doch deutlich, nur Zahlen von 1 bis 9!");
-                if (userInput >= 1 || <= 9)
-            }
 
+        char[][] playingField = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
+
+        drawingThePlayingField(playingField);
+        //Spielfeld wird angezeigt
+
+        Scanner scan = new Scanner(System.in);
+        int intScan = scan.nextInt();
+        //An dieser Stelle Usereingabe
+
+        boolean cancelTurn = true;
+        while (intScan >= 1 || intScan <= 9) {
+            if (intScan < 1 || intScan > 9) {
+                System.out.println(intError());
+                intScan = scan.nextInt();
+                turn('x', intScan, playingField);
+            } else {
+                try{
+
+                }
+                catch (InputMismatchException exception)
+            }
+        }
+
+    }
+
+    public static void drawingThePlayingField(char[][] playingField) {
+        System.out.println("\n" + "-----------------");
+        System.out.println("\n" + "Hier ist nun dein Spielfeld!" + "\n");
+        for (int x = 0; x < playingField.length; x++) {
+            for (int y = 0; y < playingField[x].length; y++) {
+                System.out.print("\t" + playingField[x][y] + "\t");
+            }
+            System.out.println();
+            System.out.println();
+        }
+    }
+
+    public static String mismatchError() {
+        return "Fehler: Bitte keine Buchstaben eingeben.";
+    }
+
+    public static String intError() {
+        return "Fehler: Bitte nur Zahlen zwischen 1 und 9 eingeben.";
+
+    }
+
+
+    public static void turn(char player, int userInput, char[][] playingField) {
+        switch (userInput) {
+            case 1:
+                playingField[0][0] = player;
+                break;
+            case 2:
+                playingField[0][1] = player;
+                break;
+            case 3:
+                playingField[0][2] = player;
+                break;
+            case 4:
+                playingField[1][0] = player;
+                break;
+            case 5:
+                playingField[1][1] = player;
+                break;
+            case 6:
+                playingField[1][2] = player;
+                break;
+            case 7:
+                playingField[2][0] = player;
+                break;
+            case 8:
+                playingField[2][1] = player;
+                break;
+            case 9:
+                playingField[2][2] = player;
+                break;
         }
     }
 }
