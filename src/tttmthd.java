@@ -14,20 +14,8 @@ public class tttmthd {
         //An dieser Stelle Usereingabe
 
         boolean cancelTurn = true;
-        while (intScan >= 1 || intScan <= 9) {
-            if (intScan < 1 || intScan > 9) {
-                System.out.println(intError());
-                intScan = scan.nextInt();
-                turn('x', intScan, playingField);
-            } else {
-                try{
-
-                }
-                catch (InputMismatchException exception)
-            }
-        }
-
     }
+
 
     public static void drawingThePlayingField(char[][] playingField) {
         System.out.println("\n" + "-----------------");
