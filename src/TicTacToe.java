@@ -96,7 +96,7 @@ public class TicTacToe {
         }
         if ((playingField[0][0] == c && playingField[1][1] == c && playingField[2][2] == c) ||
                 (playingField[2][0] == c && playingField[1][1] == c && playingField[0][2] == c)) {
-            System.out.println("Der Gewinner ist " + s);
+            System.out.println("Gewinner ist: " + s);
             return true;
         }
         return false;
