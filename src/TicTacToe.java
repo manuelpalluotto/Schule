@@ -6,10 +6,10 @@ public class TicTacToe {
         char[][] playingField = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
         //Das Array wird deklariert und initialisiert und dient uns als Spielfeld
 
-        System.out.println("Willkommen Spieler 1, bitte geben Sie Ihren Namen ein:");
+        System.out.println("Willkommen Spieler 1, bitte gib deinen Namen ein:");
         String namePlayer1 = playerName();
 
-        System.out.println("Willkommen Spieler 2, bitte geben sie Ihren Namen ein:");
+        System.out.println("Willkommen Spieler 2, bitte gib deinen Namen ein:");
         String namePlayer2 = playerName();
         //Die Methode für Namenseingabe wird aufgerufen
 
@@ -17,37 +17,34 @@ public class TicTacToe {
         //Ein Einleitungstext wird abgerufen
 
 
-        drawingThePlayingField(playingField);
-        //Mittels einer for-Schleife wird hier durch das Array iteriert und das Spielfeld wird ausgegeben
+        showingEmptyBoard(playingField);
+        //Das leere Spielfeld wird ausgegeben
 
 
         for (int i = 1; i < 9; i++) {
-            if (gewinner(playingField, 'o', namePlayer2)) {
+            if (determinateTheWinner(playingField, 'o', namePlayer2)) {
                 break;
             }
-            //In der aufgerufenen Methode wird hier überpfrüft ob der vorherige Spielzug
-            //bereits gewonnnen hat
-
-            tokenPlayer(playingField, namePlayer1, 'x');
-            outputAfterToken(playingField);
-            if (gewinner(playingField, 'x', namePlayer1)) {
+            validateUserInput(playingField, namePlayer1, 'x');
+            showBoardAfterPlayersTurn(playingField);
+            if (determinateTheWinner(playingField, 'x', namePlayer1)) {
                 break;
             }
-            //In der aufgerufenen Methode wird hier überpfrüft ob der vorherige Spielzug
-            //bereits gewonnnen hat
-
-            tokenPlayer(playingField, namePlayer2, 'o');
-            outputAfterToken(playingField);
-
+            validateUserInput(playingField, namePlayer2, 'o');
+            showBoardAfterPlayersTurn(playingField);
         }
-
     }
+    /* Es wird kontrolliert ob ein Spielzug bereits gewonnen hat oder ein Unentschieden erreicht wurde, falls ja
+    wird die schleife beendet */
+
 
     public static String playerName() {
         Scanner scanner1 = new Scanner(System.in);
         String namePlayer = scanner1.nextLine();
         return namePlayer;
     }
+    //Methode zur Namenseingabe
+
 
     public static void introduction() {
         System.out.println();
@@ -56,10 +53,11 @@ public class TicTacToe {
         Scanner enter = new Scanner(System.in);
         System.out.println("Um fortzufahren, drücke die ENTER Taste.");
         String weiter = enter.nextLine();
-
     }
+    //Methode zur Namenseingabe
 
-    public static void drawingThePlayingField(char[][] playingField) {
+
+    public static void showingEmptyBoard(char[][] playingField) {
         System.out.println("\n" + "-----------------");
         System.out.println("\n" + "Hier ist nun dein Spielfeld!" + "\n");
         for (int x = 0; x < playingField.length; x++) {
@@ -70,26 +68,27 @@ public class TicTacToe {
             System.out.println();
         }
     }
+    //Methode zur Anzeige des Spielfelds
 
 
-    public static boolean gewinner(char[][] playingField, char c, String s) {                            //GEWINNER von c
+    public static boolean determinateTheWinner(char[][] playingField, char c, String s) {
         for (int i = 0; i < 3; i++) {
             if ((playingField[i][0] == c && playingField[i][1] == c && playingField[i][2] == c) || (playingField[0][i] == c && playingField[1][i] == c && playingField[2][i] == c)) {
                 System.out.println("Gewinner: " + s);
                 return true;
-
             }
         }
         if ((playingField[0][0] == c && playingField[1][1] == c && playingField[2][2] == c) ||
                 (playingField[2][0] == c && playingField[1][1] == c && playingField[0][2] == c)) {
             System.out.println("Der Gewinner ist " + s);
-                    return true;
+            return true;
         }
         return false;
-
     }
+    //Methode zur Gewinnermittlung
 
-    public static void tokenPlayer(char[][] playingField, String namePlayer, char c) {
+
+    public static void validateUserInput(char[][] playingField, String namePlayer, char c) {
         boolean isLoop = true;
         while (isLoop) {
             int intScan;
@@ -97,26 +96,29 @@ public class TicTacToe {
             try {
                 Scanner scan = new Scanner(System.in);
                 intScan = scan.nextInt();
+
             } catch (InputMismatchException e) {
-                System.out.println(mismatchError());
-                outputAfterToken(playingField);
+                showBoardAfterPlayersTurn(playingField);
+                System.out.println(inputMismatchError());
                 continue;
             }
             if (intScan < 1 || intScan > 9) {
+                showBoardAfterPlayersTurn(playingField);
                 System.out.println(intError());
-                outputAfterToken(playingField);
                 continue;
             }
             if (validatePlayerChangeAndSetTurn(c, intScan, playingField)) {
-                System.out.println("Falsche Eingabe");
+                System.out.println("Fehler: nur ein freies Feld kann belegt werden");
 
             } else {
                 isLoop = false;
             }
         }
     }
+    //Methode zum Abfangen falscher Eingaben und ggf. erneuter Eingabeaufforderung
 
-    public static void outputAfterToken(char[][] playingField) {
+
+    public static void showBoardAfterPlayersTurn(char[][] playingField) {
         for (int i = 0; i < playingField.length; i++) {
             for (int j = 0; j < playingField[i].length; j++) {
                 System.out.print("\t" + playingField[i][j] + "\t");
@@ -125,17 +127,19 @@ public class TicTacToe {
             System.out.println();
         }
     }
+    //Methode zur Anzeige des aktuellsten Spielfelds
 
 
-    public static String mismatchError() {
-        return "Fehler: Bitte keine Buchstaben eingeben.";
+    public static String inputMismatchError() {
+        return "Fehler: Bitte nur Zahlen eingeben.";
     }
 
     public static String intError() {
         return "Fehler: Bitte nur Zahlen zwischen 1 und 9 eingeben.";
-
     }
+    //Fehlermeldung bei falscher Eingabe
 
+    
     public static boolean validatePlayerChangeAndSetTurn(char player, int userInput, char[][] playingField) {
         switch (userInput) {
             case 1:
@@ -204,4 +208,5 @@ public class TicTacToe {
         }
         return false;
     }
+    //Methode zur Kontrolle ob das gewählte Feld bereits belegt ist, Zuweisung
 }
