@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class TicTacToe {
     public static void main(String[] args) {
+
         char[][] playingField = {{'1', '2', '3'}, {'4', '5', '6'}, {'7', '8', '9'}};
         //Das Array wird deklariert und initialisiert und dient uns als Spielfeld
 
@@ -22,20 +23,19 @@ public class TicTacToe {
 
 
         for (int i = 1; i < 9; i++) {
-            if (determinateTheWinner(playingField, 'o', namePlayer2)) {
+            if (determineTheWinner(playingField, 'o', namePlayer2)) {
                 break;
             }
             validateUserInput(playingField, namePlayer1, 'x');
             showBoardAfterPlayersTurn(playingField);
-            if (determinateTheWinner(playingField, 'x', namePlayer1)) {
+            if (determineTheWinner(playingField, 'x', namePlayer1)) {
                 break;
             }
             validateUserInput(playingField, namePlayer2, 'o');
             showBoardAfterPlayersTurn(playingField);
         }
+
     }
-    /* Es wird kontrolliert ob ein Spielzug bereits gewonnen hat oder ein Unentschieden erreicht wurde, falls ja
-    wird die schleife beendet */
 
 
     public static String playerName() {
@@ -52,7 +52,7 @@ public class TicTacToe {
         System.out.println();
         Scanner enter = new Scanner(System.in);
         System.out.println("Um fortzufahren, drücke die ENTER Taste.");
-        String weiter = enter.nextLine();
+        enter.nextLine();
     }
     //Methode zur Namenseingabe
 
@@ -71,7 +71,7 @@ public class TicTacToe {
     //Methode zur Anzeige des Spielfelds
 
 
-    public static boolean determinateTheWinner(char[][] playingField, char c, String s) {
+    public static boolean determineTheWinner(char[][] playingField, char c, String s) {
         for (int i = 0; i < 3; i++) {
             if ((playingField[i][0] == c && playingField[i][1] == c && playingField[i][2] == c) || (playingField[0][i] == c && playingField[1][i] == c && playingField[2][i] == c)) {
                 System.out.println("Gewinner: " + s);
@@ -108,7 +108,7 @@ public class TicTacToe {
                 continue;
             }
             if (validatePlayerChangeAndSetTurn(c, intScan, playingField)) {
-                System.out.println("Fehler: nur ein freies Feld kann belegt werden");
+                System.out.println("Fehler: Nur ein freies Feld kann belegt werden");
 
             } else {
                 isLoop = false;
@@ -139,7 +139,7 @@ public class TicTacToe {
     }
     //Fehlermeldung bei falscher Eingabe
 
-    
+
     public static boolean validatePlayerChangeAndSetTurn(char player, int userInput, char[][] playingField) {
         switch (userInput) {
             case 1:

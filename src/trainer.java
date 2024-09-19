@@ -127,10 +127,10 @@ public class trainer {
 //        System.out.println(zahl);
 //        System.out.println(zahlen.toString());
 
-//        String determinateTheWinner;
+//        String determineTheWinner;
 //        Random random = new Random();
-//        determinateTheWinner = array[random.nextInt(array.length)];
-//        System.out.println(determinateTheWinner);
+//        determineTheWinner = array[random.nextInt(array.length)];
+//        System.out.println(determineTheWinner);
 
 
 //        for (int i1 = 1; i1 < 5; i1 += 1) {
