@@ -1,5 +1,5 @@
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Notizen {
     public static void main(String[] args) {
@@ -9,30 +9,32 @@ public class Notizen {
         //              %d.", name, alter, alter + 1);
 
 
-        String meinString = "viers";
-        System.out.println(toUpperOrLowerCase(meinString));
-        int alterInJahren = 17;
-        System.out.println(isOldEnough(alterInJahren));
-        System.out.println(minutenNachSekunden(3));
-        String str = "amahay";
-        System.out.println(gleichVieleXundY(str));
-        String vorname = "Max";
-        String nachname = "Fustermann";
-        System.out.println(berechneInitialien(vorname, nachname));
-        System.out.println(kehreStringUm(nachname));
-        String strng = "Text";
-        System.out.println(baueWortPyramide(strng));
-        ArrayList<Integer> innt = new ArrayList<Integer>();
-        innt.add(1);
-        innt.add(2);
-        innt.add(3);
-        innt.add(4);
-        innt.add(15);
-        System.out.println(getPrimzahlenVon(2, 20));
-        int a = 1;
-        int b = 10;
-        int c = 9;
-        System.out.println(berechneDurchschnitt(a, b, c));
+//        String meinString = "viers";
+//        System.out.println(toUpperOrLowerCase(meinString));
+//        int alterInJahren = 17;
+//        System.out.println(isOldEnough(alterInJahren));
+//        System.out.println(minutenNachSekunden(3));
+//        String str = "amahay";
+//        System.out.println(gleichVieleXundY(str));
+//        String vorname = "Max";
+//        String nachname = "Fustermann";
+//        System.out.println(berechneInitialien(vorname, nachname));
+//        System.out.println(kehreStringUm(nachname));
+//        String strng = "Text";
+//        System.out.println(baueWortPyramide(strng));
+//        ArrayList<Integer> innt = new ArrayList<Integer>();
+//        innt.add(1);
+//        innt.add(2);
+//        innt.add(3);
+//        innt.add(4);
+//        innt.add(15);
+//        System.out.println(getPrimzahlenVon(2, 20));
+//        int a = 1;
+//        int b = 10;
+//        int c = 9;
+//        System.out.println(berechneDurchschnitt(a, b, c));
+        String stri = "blahhalb";
+        System.out.println(getMittlererBuchstabe(stri));
     }
 
     public static String toUpperOrLowerCase(String meinString) {
@@ -134,8 +136,40 @@ public class Notizen {
         }
         return primzahlen;
     }
+
+    public static String getMittlererBuchstabe(String str) {
+        String middle = "";
+        if (str.length() % 2 == 0) {
+            return str.substring((str.length() / 2) - 1, (str.length() / 2) + 1);
+        } else {
+            return str.substring((str.length() / 2), (str.length() / 2) + 1);
+        }
+    }
+
+
 }
 
+
+
+
+
+
+
+
+
+
+
+
+/*   i = 2 und j = 2
+=> i / 2
+= 2 / 2 = 1
+ => j ist nicht kleiner als i / 2
+
+ i = 3 => i/2=1.5 => j nicht kleiner als i/2
+
+ i=4 => i/2<=2 =>
+
+ */
 
 // beginn >= 2
 // ende >= beginn
