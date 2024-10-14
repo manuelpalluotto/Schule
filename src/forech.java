@@ -17,15 +17,13 @@ public class forech {
         }
         System.out.println(sum);
 
-        String charFinden = "Char finden.";
-        for (String aufgabe : charFinden) {
 
-        }
+
     }
 }
 
 
 // int[] ursprungsInt = {1, 2, 3, 4, 5}
 // for (int neueInt : ursprungsInt){
-//      System.out.println(neueInt);
+//      System.out.println(neuent);
 // }
