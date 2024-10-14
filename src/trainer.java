@@ -20,14 +20,277 @@ public class trainer {
         }
 
         */
-        String
-        String stringCase;
-        if (stringCase.equals("gross")) {
-            System.out.println(tier.toLowerCase());
-        } else if (stringCase.equals("klein")) {
-            System.out.println(tier.toLowerCase());
-        } else if (stringCase.equals("grossUndKlein")) {
 
-        }
+
+        /*int a = 1;
+        int b = 2;
+        int c = 3;
+        wenn "True" wird der wert nach dem Fragezeichen zugewiesen, ansonsten nach doppelpunkt
+        int anwesend =
+
+        System.out.println(Math.max(a, Math.max(b, c)));*/
+
+
+//        int anwesend = 12;
+//        boolean darfTeilnehmen;
+//        int einheiten = 15;
+//        darfTeilnehmen = anwesend >= einheiten * 0.8;
+//        System.out.println(darfTeilnehmen);
+//        System.out.println(12 * 0.8);
+//
+//        //>= 3 Jahre sql und java = Profi; 3 Jahre java ODER sql = Fortgeschritten;<=  2 Jahre java UND sql = Anfänger;
+//
+//        String wissensstand = "Lalala";
+
+//        int[] zahlen;
+//        for (int i = 1; i < 4; i++) {
+//            System.out.println(i);
+//        }
+//        char[] altesArray = {'a', 'b', 'c'};
+//        char[] neuesArray = new char[altesArray.length];
+//        for (int i1 = 0; i1 < altesArray.length; i1++) {
+//            neuesArray[i1] = altesArray[i1];
+//            System.out.print(neuesArray[i1] + " ");
+//        }
+
+//        String[] zimmerpflanzen = {"Orchidee", "Lilie", "Palme"};
+//        String meineLieblingspflanze = zimmerpflanzen[1];
+//        System.out.println(meineLieblingspflanze);
+
+//        String[] kroepfchen = {"bla", "fasel", "lala"};
+//        String[] toepfchen = new String[] {"Schlechte Linse", "Gute Linse", "Sehr gute Linse"};
+//        toepfchen[0] = kroepfchen[1];
+//        System.out.println(toepfchen[0]);
+
+
+//        String[] array = {"la", "li", "lu", "lo"};
+//        int[] fasel = {1,2,3,4,5,6};
+//        fasel = Arrays.copyOf(fasel, fasel.length + 1);
+//        fasel[fasel.length - 1] = 7;
+//        System.out.println(Arrays.toString(fasel));
+//        int[] fasel2 = {1,2,3,4};
+//        System.out.println(Arrays.equals(fasel, fasel2));
+//
+//        int[][] zahlen = {{1,2}, {3,4}, {5,6}};
+//        System.out.println(Arrays.deepToString(zahlen));
+//
+//        List<String> tiere = new ArrayList<>();
+//        Collections.addAll(tiere, "schmand", "satze", "maus");
+//        Collections.sort(tiere);
+//        System.out.println(tiere);
+
+//        String[] saengerArray = {"la", "di", "da"};
+//        List<String> saengerList = List.of(saengerArray);
+//        System.out.println(saengerList);
+//        List<String> saengerList = new ArrayList<>();
+//        saengerList.add("la");
+//        saengerList.add("di");
+//        saengerList.add("da");
+//        System.out.println(saengerList);
+//        String[] saengerArray;
+//        saengerArray = saengerList.toArray(new String[1]);
+//        System.out.println(Arrays.toString(saengerArray));
+
+//            int i = 0;
+//            while (i < 10 && i % 2 == 0) {
+//                i += 2;
+//                System.out.println(i);
+//            }
+//
+//            String[] tiere = {"Affe", "Hund", "Katze"};
+//            int j = 0;
+//            while (j < 3) {
+//                System.out.println(tiere[j]);
+//                j++;
+//            }
+//
+//
+//        int i = 1;
+//        while (i <= 10) {
+//            i++;
+//            if (i % 2 != 0)
+//                continue;
+//            System.out.println(i);
+//        }
+
+
+//        List<Integer> zahlen = new ArrayList<>();
+//        zahlen.add(6);
+//        zahlen.add(7);
+//        zahlen.add(5);
+//        zahlen.add(1);
+//        zahlen.add(2);
+//        zahlen.remove(0);
+//        System.out.println(zahlen.size());
+//        int zahl;
+//        zahl = zahlen.get(2);
+//        System.out.println(zahl);
+//        System.out.println(zahlen.toString());
+
+//        String determineTheWinner;
+//        Random random = new Random();
+//        determineTheWinner = array[random.nextInt(array.length)];
+//        System.out.println(determineTheWinner);
+
+
+//        for (int i1 = 1; i1 < 5; i1 += 1) {
+//            System.out.println("Ich bin");
+//        }
+
+//        for (int i = 1; i < 201; i++) {
+//            if (i % 3 != 0 || i % 16 != 0) {
+//                continue;
+//            }
+//            System.out.println(i);
+//        }
+
+//       for (int i = 1; i < 101; i++) {
+//           if (i % 4 != 0) {
+//            continue;
+//           }
+//           System.out.println(i);
+//       }
+
+//       int[] bla = {1,2,8,3};
+//       int max = bla[0];
+//        for (int i = 0; i < bla.length; i++) {
+//            if(bla[i] > max) {
+//                max = bla[i];
+//            }
+//        }
+//        System.out.println(max);
+
+
+//        for (int i = 1; i < 201; i++) {
+//            if (i % 3 != 0 || i % 16 != 0){
+//                continue;
+//            }
+//            System.out.println(i);
+//        }
+
+//        for (int i = 1900; i < 2100; i++) {
+//            if ((i % 4 == 0 && i % 100 != 0) || (i % 400 == 0)) {
+//                System.out.println(i);
+//            }
+//        }
+
+//        for (int i = 1; i < 101; i++) {
+//            if (i % 4 != 0) {
+//                continue;
+//            }
+//            System.out.println(i);
+//        }
+
+//        for (int i = 4; i <= 16; i += 3){
+//            System.out.print(i + " ");
+//        }
+//        int anzahlZeilen = 3;
+//        char c = '*';
+//        for (int i = 0; i < anzahlZeilen; i++) {
+//            System.out.print(c);
+//            for (int i1 = 0; i1 < 10; i1++) {
+//                System.out.print(c);
+//            }
+//            System.out.println();
+//        }
+
+
+//        int anzahlZeilen = 5;
+//        for (int i = 0; i < anzahlZeilen; i++) {
+//            for (int j = 0; j < i; j++) {
+//                System.out.print(" ");
+//            }
+//            System.out.println("***");
+//        }
+
+
+//        int anzahlZeilen = 9;
+//        for (int i = 0; i <= anzahlZeilen; i++) {
+//            for (int j = 0; j < i; j++) {
+//                System.out.print(i);
+//            }
+//            System.out.println();
+//        }
+
+//        int anzahlZeilen = 23;
+//
+//        for (int i = 1; i <= anzahlZeilen; i++) {
+//            for (int j = 0; j <= (anzahlZeilen - 1) - i; j++) {
+//                System.out.print(".");
+//            }
+//            System.out.println(i);
+//        }
+
+//
+//        char[][] spielfeld = {
+//                {'a', 'b', 'c'},
+//                {'d', 'e', 'f'},
+//                {'g', 'h', 'i'}
+//        };
+//
+//        for (char[] row : spielfeld) {
+//            for (char col : row) {
+//                System.out.print(col);
+//            }
+//            System.out.println();
+//        }
+
+
+//        for (int y = 0; y < spielfeld.length; y++) {
+//            for (int x = 0; x < spielfeld[y].length; x++) {
+//                System.out.print(spielfeld[y][x]);
+//            }
+//            System.out.println();
+//        }
+//
+//        int anzahlZahlen = 9;
+//        for (int x = 1; x <= anzahlZahlen; x++) {
+//            for (int y = 0; y < x; y++) {
+//                System.out.print(x);
+//            }
+//            System.out.println();
+//        }
+
+//        int anzahlZeilen = 9;
+//        for (int i = 1; i <= anzahlZeilen; i++) {
+//            for (int j = 0; j <= (anzahlZeilen - i) - 1; j++) {
+//                System.out.print(".");
+//            }
+//            System.out.println(i);
+//
+//        }
+
+//        for (int x = 1; x <= anzahlZeilen; x++) {
+//            System.out.println("**********");
+//        }
+
+//        int a = 11;
+//        int b = 212;
+//        for (int x = 100; x < 10000; x++) {
+//            if (x % a == 0 && x % b == 0) {
+//                System.out.println(x);
+//            }
+//        }
+//        int anzahlZeilen = 9;
+//        for (int i = 1; i <= 9; i++) {
+//            for (int j = 0; j <= (9 - 1) - i; j++) {
+//                System.out.print(".");
+//            }
+//            System.out.println(i);
+//        }
+
+//        List<String> essen = new ArrayList<>();
+//        essen.add("banane");
+//        essen.add("apfel");
+//        essen.add("spaghetti");
+//        essen.add("lasagne");
+//        essen.add("ravioli");
+//
+//        for (String s : essen) {
+//            System.out.println(s);
+//        }
+
+
     }
+
 }
