@@ -33,8 +33,11 @@ public class Notizen {
 //        int b = 10;
 //        int c = 9;
 //        System.out.println(berechneDurchschnitt(a, b, c));
-        String stri = "blahhalb";
-        System.out.println(getMittlererBuchstabe(stri));
+//        String stri = "blahhalb";
+//        System.out.println(getMittlererBuchstabe(stri));
+//          System.out.println(isAufeinanderfolgend(1, 3, 2));
+        int a = 1; int b = 2;
+        System.out.println(a + b);
     }
 
     public static String toUpperOrLowerCase(String meinString) {
@@ -144,6 +147,21 @@ public class Notizen {
         } else {
             return str.substring((str.length() / 2), (str.length() / 2) + 1);
         }
+    }
+
+    public static boolean isAufeinanderfolgend(int a, int b, int c) {
+        int[] zahlenReihenfolge = {a, b, c};
+        boolean istAufeinanderfolgend = true;
+        for (int i = 0; i < zahlenReihenfolge.length; i++) {
+            for (int j = 1; j < i; j++) {
+                if (j == i + 1 || j == i - 1) {
+                    istAufeinanderfolgend = true;
+                } else {
+                    istAufeinanderfolgend = false;
+                }
+            }
+        }
+        return istAufeinanderfolgend;
     }
 
 
