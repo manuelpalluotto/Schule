@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Notizen {
     public static void main(String[] args) {
@@ -36,8 +37,19 @@ public class Notizen {
 //        String stri = "blahhalb";
 //        System.out.println(getMittlererBuchstabe(stri));
 //          System.out.println(isAufeinanderfolgend(1, 3, 2));
-        int a = 1; int b = 2;
-        System.out.println(a + b);
+//        int a = 1; int b = 2;
+//        System.out.println(a + b);
+        String a = "blafasel";
+        System.out.println(a.replace("fas", "bla"));
+        System.out.println("\"\\\\test//\"");
+        double d = 25;
+        System.out.println(Math.sqrt(d));
+
+        System.out.println((int) (Math.random() * 21) - 10);
+        Random r = new Random();
+        System.out.println(r.nextInt(-10, 21));
+        System.out.println(Math.PI);
+
     }
 
     public static String toUpperOrLowerCase(String meinString) {
