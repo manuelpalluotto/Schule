@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Notizen {
@@ -33,8 +34,44 @@ public class Notizen {
 //        int b = 10;
 //        int c = 9;
 //        System.out.println(berechneDurchschnitt(a, b, c));
-        String stri = "blahhalb";
-        System.out.println(getMittlererBuchstabe(stri));
+//        String stri = "blahhalb";
+//        System.out.println(getMittlererBuchstabe(stri));
+
+        char[] altesArray = {'a', 'b', 'c'};
+        meineMethode(altesArray);
+        for (char f : altesArray) {
+            System.out.println(f);
+        }
+        double[] preise = {1.2, 1.3, 1.4, 1.5};
+        preise = Arrays.copyOf(preise, preise.length + 1);
+        preise[preise.length - 1] = 1.6;
+        System.out.println(preise[preise.length - 1]);
+
+        double[] preises = {1.2, 1.3, 1.4, 1.5, 1.6};
+        System.out.println(Arrays.equals(preise, preises));
+
+        int[][] x = {{1, 2}, {3, 4}, {5, 6}};
+//        for (int i = 0; i < x.length; i++) {
+//            for (int j = 0; j < x[i].length; j++) {
+//                System.out.print(x[i][j]);
+//            }
+//        }
+        System.out.println(Arrays.deepToString(x));
+
+//        for (int[] y : x) {
+//            for (int z : y) {
+//                System.out.print(z);
+//            }
+//            System.out.println();
+//        }
+    }
+
+    public static char[] meineMethode(char[] altesArray) {
+        char[] neuesArray = new char[altesArray.length];
+        for (int i = 0; i < altesArray.length; i++) {
+            neuesArray[i] = altesArray[i];
+        }
+        return neuesArray;
     }
 
     public static String toUpperOrLowerCase(String meinString) {
