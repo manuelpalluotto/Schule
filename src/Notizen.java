@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Notizen {
     public static void main(String[] args) {
@@ -50,7 +48,148 @@ public class Notizen {
         System.out.println(r.nextInt(-10, 21));
         System.out.println(Math.PI);
 
+        //        String stri = "blahhalb";
+//        System.out.println(getMittlererBuchstabe(stri));
+
+        char[] altesArray = {'a', 'b', 'c'};
+        meineMethode(altesArray);
+        for (char f : altesArray) {
+            System.out.println(f);
+        }
+        double[] preise = {1.2, 1.8, 1.4, 1.5};
+        for (double e : preise) {
+            System.out.println(e);
+        }
+        Arrays.sort(preise);
+        for (double f : preise) {
+            System.out.println(f);
+        }
+
+        preise = Arrays.copyOf(preise, preise.length + 1);
+        preise[preise.length - 1] = 1.6;
+        System.out.println(preise[preise.length - 1]);
+
+        double[] preises = {1.2, 1.3, 1.4, 1.5, 1.6};
+        System.out.println(Arrays.equals(preise, preises));
+
+
+        int[][] x = {{1, 2}, {3, 4}, {5, 6}};
+//        for (int i = 0; i < x.length; i++) {
+//            for (int j = 0; j < x[i].length; j++) {
+//                System.out.print(x[i][j]);
+//            }
+//        }
+        System.out.println(Arrays.deepToString(x));
+
+//        for (int[] y : x) {
+//            for (int z : y) {
+//                System.out.print(z);
+//            }
+//            System.out.println();
+//        }
+
+        List<Integer> bla = new ArrayList<>();
+        for (int i = 2; i < 20; i += 2) {
+            bla.add(i);
+        }
+        Collections.sort(bla);              // -> DIE LISTE SORTIEREN
+
+        bla.set(2, 100);                    // -> EIN ELEMENT TAUSCHEN
+        for (int t : bla) {
+            System.out.println(t);
+        }
+
+        int zahl = bla.get(0);              // -> EIN ELEMENT FINDEN
+        System.out.println(zahl);
+
+        bla.clear();                        // -> ALLE ELEMENTE LÖSCHEN
+        System.out.println(bla.isEmpty());
+
+//        for (int i = 0; i < 5; i++) {
+//            for (int j = 0; j < 5; j++) {
+//                System.out.print('*');
+//            }
+//            System.out.println();
+//        }
+
+        int anzahl = 5;
+        for (int i = 0; i < anzahl; i++) {
+            for (int j = 0; j <= i; j++) {
+                System.out.print(i);
+            }
+            System.out.println();
+        }
+            /*  1
+                22
+                333
+                4444
+                55555
+             */
+            char[][] spielfeld = {{'a', 'b', 'c'}, {'d', 'e', 'f'}, {'g', 'h', 'i'}};
+
+
+
+
+
+//        Scanner print = new Scanner(System.in);
+//        int anzahlZeilen = print.nextInt();
+//        for (int i = 1; i <= anzahlZeilen; i++) {
+//            for (int j = i; j < anzahlZeilen; j++) {
+//                System.out.print('.');
+//            }
+//            System.out.println(i);
+//        }
+        //....1
+        //...2
+        //..3
+        //.4
+        //5
+        int f = 5;
+        sternchenPyramide(f);
+        arrayNavigieren(spielfeld);
+
+
+
+
     }
+
+
+    public static void sternchenPyramide(int x) {
+        for (int i = 1; i < x; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print('*');
+            }
+            System.out.println();
+        }
+    }
+/*  *
+    **
+    ***
+    ****
+ */
+
+    public static void arrayNavigieren(char[]) {
+        char[][] spielfeld = {{'a', 'b', 'c'}, {'d', 'e', 'f'}, {'g', 'h', 'i'}};
+        for (int i = 0; i < spielfeld.length; i++) {
+            for (int j = 0; j < spielfeld[i].length; j++) {
+                System.out.print(spielfeld[i][j]);
+            }
+            System.out.println();
+        }
+    }
+
+    public static String removeTwoChars(String str) {
+
+    }
+
+    public static char[] meineMethode(char[] altesArray) {  // -------------------->
+        char[] neuesArray = new char[altesArray.length];
+        for (int i = 0; i < altesArray.length; i++) {                               //ARRAY KOPIEREN
+            neuesArray[i] = altesArray[i];
+        }
+        return neuesArray;                                  // -------------------->
+    }
+
 
     public static String toUpperOrLowerCase(String meinString) {
         if (meinString.length() % 2 == 0) {
