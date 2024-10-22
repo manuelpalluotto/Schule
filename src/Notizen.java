@@ -34,7 +34,10 @@ public class Notizen {
 //        int b = 10;
 //        int c = 9;
 //        System.out.println(berechneDurchschnitt(a, b, c));
-
+        int x = 5;
+        sternchenVersetzt(x);
+        zahlenPyramideGleichVieleZeilenWieZahl(x);
+        sternchenPyramide(x);
 }
 
     public static String toUpperOrLowerCase(String meinString) {
@@ -57,6 +60,30 @@ public class Notizen {
     public static double minutenNachSekunden(int minuten) {
         minuten *= 60;
         return minuten;
+    }
+    public static void sternchenVersetzt(int anzahlZeilen) {
+        for (int i = 0; i < anzahlZeilen; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            System.out.println("***");
+        }
+    }
+    public static void zahlenPyramideGleichVieleZeilenWieZahl(int anzahlZeilen) {
+        for (int i = 1; i <= anzahlZeilen; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(i);
+            }
+            System.out.println();
+        }
+    }
+    public static void sternchenPyramide(int anzahlZeilen) {
+        for (int i = 1; i <= anzahlZeilen; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print('*');
+            }
+            System.out.println();
+        }
     }
 
     public static boolean gleichVieleXundY(String str) {
