@@ -73,14 +73,11 @@ public class Notizen {
     }
 
     public static boolean isOldEnough(int alterInJahren) {
-
-        boolean volljährig = alterInJahren < 18 ? false : true;
-        return volljährig;
+        return alterInJahren < 18 ? false : true;
     }
 
     public static double minutenNachSekunden(int minuten) {
-        minuten *= 60;
-        return minuten;
+        return minuten * 60;
     }
 
     public static void sternchenVersetzt(int anzahlZeilen) {
