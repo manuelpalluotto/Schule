@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Notizen {
@@ -34,21 +33,43 @@ public class Notizen {
 //        int b = 10;
 //        int c = 9;
 //        System.out.println(berechneDurchschnitt(a, b, c));
+        char[][] spielfeld = {
+                {'a', 'b', 'c'},
+                {'d', 'e', 'f'},
+                {'g', 'h', 'i'},
+        };
+        int alter = 22;
+        String name = "Max";
         int x = 5;
         sternchenVersetzt(x);
         zahlenPyramideGleichVieleZeilenWieZahl(x);
         sternchenPyramide(x);
-}
+        abcSpielfeld(spielfeld);
+        bitteVorstellen(name, alter);
+        System.out.println(toUpperOrLowerCase(name));
+
+    }
+
+    public static void bitteVorstellen(String name, int alter) {
+        System.out.println(String.format("Mein Name ist %s und ich bin %d Jahre alt. Nach meinem Geburtstag bin ich %d.", name, alter, alter + 1));
+
+    }
+
+    public static void abcSpielfeld(char[][] spielfeld) {
+        for (int i = 0; i < spielfeld.length; i++) {
+            for (int j = 0; j < spielfeld[i].length; j++) {
+                System.out.print(spielfeld[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static int zollNachFuss(int zoll) {
+        return zoll / 12;
+    }
 
     public static String toUpperOrLowerCase(String meinString) {
-        if (meinString.length() % 2 == 0) {
-            return meinString.toLowerCase();
-        }
-        if (meinString.length() % 2 != 0) {
-            return meinString.toUpperCase();
-        } else {
-            return meinString;
-        }
+        return meinString.length() % 2 == 0 ? meinString.toLowerCase() : meinString.toUpperCase();
     }
 
     public static boolean isOldEnough(int alterInJahren) {
@@ -61,6 +82,7 @@ public class Notizen {
         minuten *= 60;
         return minuten;
     }
+
     public static void sternchenVersetzt(int anzahlZeilen) {
         for (int i = 0; i < anzahlZeilen; i++) {
             for (int j = 0; j < i; j++) {
@@ -69,6 +91,7 @@ public class Notizen {
             System.out.println("***");
         }
     }
+
     public static void zahlenPyramideGleichVieleZeilenWieZahl(int anzahlZeilen) {
         for (int i = 1; i <= anzahlZeilen; i++) {
             for (int j = 0; j < i; j++) {
@@ -77,6 +100,7 @@ public class Notizen {
             System.out.println();
         }
     }
+
     public static void sternchenPyramide(int anzahlZeilen) {
         for (int i = 1; i <= anzahlZeilen; i++) {
             for (int j = 0; j < i; j++) {
