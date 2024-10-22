@@ -165,7 +165,7 @@ public class Notizen {
 /*  *
     **
     ***
-    ****
+    ***
  */
 
     public static void arrayNavigieren(char[]) {
