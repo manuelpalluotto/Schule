@@ -33,6 +33,9 @@ public class Notizen {
 //        int b = 10;
 //        int c = 9;
 //        System.out.println(berechneDurchschnitt(a, b, c));
+        for (int i = 0; i < 3; i++) {
+            System.out.println("_|_|_");
+        }
         char[][] spielfeld = {
                 {'a', 'b', 'c'},
                 {'d', 'e', 'f'},
