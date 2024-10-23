@@ -40,13 +40,19 @@ public class Notizen {
         };
         int alter = 22;
         String name = "Max";
-        int x = 5;
+        int x = 3;
+        int a = 6;
+        int b = 7;
+        int c = 5;
         sternchenVersetzt(x);
         zahlenPyramideGleichVieleZeilenWieZahl(x);
         sternchenPyramide(x);
         abcSpielfeld(spielfeld);
         bitteVorstellen(name, alter);
         System.out.println(toUpperOrLowerCase(name));
+        System.out.println(gleichVieleXundY("aaa"));
+        System.out.println(isPrimzahl(x));
+        System.out.println(isAufeinanderfolgend(a, b, c));
 
     }
 
@@ -63,6 +69,7 @@ public class Notizen {
             System.out.println();
         }
     }
+
 
     public static int zollNachFuss(int zoll) {
         return zoll / 12;
@@ -110,25 +117,17 @@ public class Notizen {
     public static boolean gleichVieleXundY(String str) {
         int countX = 0;
         int countY = 0;
-        boolean bool = true;
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == 'y' || str.charAt(i) == 'Y') {
                 countY++;
+                continue;
             }
             if (str.charAt(i) == 'x' || str.charAt(i) == 'X') {
                 countX++;
+                continue;
             }
         }
-        if (countY == countX) {
-            bool = true;
-        } else if (countY != countX) {
-            bool = false;
-        } else if (countY == 0 && countX == 0) {
-            bool = true;
-        } else {
-            bool = false;
-        }
-        return bool;
+        return countX == countY ? true : false;
     }
 
     public static String berechneInitialien(String vorname, String nachname) {
@@ -156,6 +155,15 @@ public class Notizen {
             ausgabe += teilstring + "\n";
         }
         return ausgabe;
+    }
+
+    public static boolean isPrimzahl(int zahl) {
+        for (int i = 2; i < zahl / 2; i++) {
+            if (zahl % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static double berechneDurchschnitt(int a, int b, int c) {
