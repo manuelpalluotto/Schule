@@ -52,7 +52,7 @@ public class Notizen {
         System.out.println(toUpperOrLowerCase(name));
         System.out.println(gleichVieleXundY("aaa"));
         System.out.println(isPrimzahl(x));
-        System.out.println(isAufeinanderfolgend(a, b, c));
+
 
     }
 
