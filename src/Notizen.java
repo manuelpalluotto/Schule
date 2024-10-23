@@ -41,9 +41,9 @@ public class Notizen {
         int alter = 22;
         String name = "Max";
         int x = 3;
-        int a = 6;
-        int b = 7;
-        int c = 5;
+        int a = 2;
+        int b = 1;
+        int c = 3;
         sternchenVersetzt(x);
         zahlenPyramideGleichVieleZeilenWieZahl(x);
         sternchenPyramide(x);
@@ -52,8 +52,25 @@ public class Notizen {
         System.out.println(toUpperOrLowerCase(name));
         System.out.println(gleichVieleXundY("aaa"));
         System.out.println(isPrimzahl(x));
+        System.out.println(isAufeinanderfolgend(a, b, c));
+        //1, 2, 3 -> true
+        //2, 3, 1 -> true
+        //1, 3, 4 -> false
 
+    }
 
+    public static boolean isAufeinanderfolgend(int a, int b, int c) {
+        int min = Math.min(a, Math.min(b, c));
+        int max = Math.max(a, Math.max(b, c));
+        int middle = (a + b + c) - min - max;
+
+        if (min != middle - 1) {
+            return false;
+        }
+        if (middle != max - 1) {
+            return false;
+        }
+        return true;
     }
 
     public static void bitteVorstellen(String name, int alter) {
