@@ -57,15 +57,21 @@ public class Notizen {
         System.out.println(gleichVieleXundY("aaa"));
         System.out.println(isPrimzahl(x));
         System.out.println(isAufeinanderfolgend(a, b, c));
-        int n = 5;
-        int[] gut = new int[n];
-       for (int i = 0; i < gut.length; i++) {
-           gut[i] = n - i;
-       }
-        for (int f : gut) {
-            System.out.println(f);
+        System.out.println(repeatStr(3, name));
+
+    }
+
+    public static boolean setAlarm(boolean employed, boolean vacation) {
+        return employed && !vacation;
+    }
+
+    public static String repeatStr(int repeat, String string) {
+        return string.repeat(repeat);
         }
 
+    public static long findNextSquare(long sq) {
+
+        return 0;
     }
 
     public static boolean objektArray(Object[] a, Object x) {
