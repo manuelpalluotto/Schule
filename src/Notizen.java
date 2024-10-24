@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Notizen {
     public static void main(String[] args) {
@@ -56,10 +57,29 @@ public class Notizen {
         System.out.println(gleichVieleXundY("aaa"));
         System.out.println(isPrimzahl(x));
         System.out.println(isAufeinanderfolgend(a, b, c));
-        //1, 2, 3 -> true
-        //2, 3, 1 -> true
-        //1, 3, 4 -> false
+        int n = 5;
+        int[] gut = new int[n];
+       for (int i = 0; i < gut.length; i++) {
+           gut[i] = n - i;
+       }
+        for (int f : gut) {
+            System.out.println(f);
+        }
 
+    }
+
+    public static boolean objektArray(Object[] a, Object x) {
+        boolean vorhanden = false;
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] == x) {
+                vorhanden = true;
+            }
+        }
+        return vorhanden;
+    }
+
+    public static String greeting(String name, String owner) {
+        return owner.equals(name) ? "Hello Boss" : "Hello Guest";
     }
 
     public static boolean isAufeinanderfolgend(int a, int b, int c) {
