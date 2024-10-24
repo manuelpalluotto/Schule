@@ -70,6 +70,9 @@ public class Notizen {
         }
 
     public static long findNextSquare(long sq) {
+//        121 --> 144
+//        625 --> 676
+//        114 --> -1  #  because 114 is not a perfect square
 
         return 0;
     }
