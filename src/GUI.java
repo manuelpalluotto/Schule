@@ -1,156 +1,118 @@
-
 import javax.swing.*;
 import java.awt.*;
+
 public class GUI {
     private JFrame frame;
-
     private ImageIcon spielfeld;
+    private JPanel tttGrid;
+    private JLabel background;
 
-    private JPanel panel;
-
-    private JLabel pTopLeft;
-    private JLabel pTopCenter;
-    private JLabel pTopRight;
-    private JLabel pCenterLeft;
-    private JLabel pCenterCenter;
-    private JLabel pCenterRight;
-    private JLabel pBottomLeft;
-    private JLabel pBottomCenter;
-    private JLabel pBottomRight;
-    private JLabel label;
-
-    private JButton topLeft;
-    private JButton topCenter;
-    private JButton topRight;
-    private JButton centerLeft;
-    private JButton centerCenter;
-    private JButton centerRight;
-    private JButton bottomLeft;
-    private JButton bottomCenter;
-    private JButton bottomRight;
 
     public GUI() {
-    frame = new JFrame();
+        frame = new JFrame();
         frame.setTitle("TicTacToe");
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-        frame.setSize(1920, 1137);
+        frame.setSize(1920, 1080);
         frame.setLocationRelativeTo(null);
 
         spielfeld = new ImageIcon(this.getClass().getResource("/emptyTTT.jpg"));
 
-        panel = new JPanel(new BorderLayout());
-        panel.setSize(500, 350);
+        background = new JLabel(spielfeld);
+        background.setLayout(new BorderLayout());
 
-        label = new JLabel(spielfeld);
-        label.setSize(500, 350);
-
-        panel.add(label);
-        frame.add(panel);
-
-        frame.revalidate();
-        frame.repaint();
-
-        //ein Feld 250 breit
-        topLeft = new JButton();
-        topLeft.setOpaque(false);
-        topLeft.setContentAreaFilled(false);
-        topLeft.setBounds(525, 60, 50, 50);
-        label.add(topLeft);
-
-        topCenter = new JButton();
-        topCenter.setOpaque(false);
-        topCenter.setContentAreaFilled(false);
-        topCenter.setBounds(940, 60, 50, 50);
-        label.add(topCenter);
-
-        topRight = new JButton();
-        topRight.setOpaque(false);
-        topRight.setContentAreaFilled(false);
-        topRight.setBounds(1355, 60, 50, 50);
-        label.add(topRight);
+        tttGrid = new JPanel(new GridLayout(3, 3));
+        tttGrid.setOpaque(false);
 
 
+        for (int i = 0; i < 9; i++) {
+            JPanel cardPanel = new JPanel(new CardLayout());
+            cardPanel.setOpaque(false);
 
-        centerLeft = new JButton();
-        centerLeft.setOpaque(false);
-        centerLeft.setContentAreaFilled(false);
-        centerLeft.setBounds(525, 340, 50, 50);
-        label.add(centerLeft);
-
-        centerCenter = new JButton();
-        centerCenter.setOpaque(false);
-        centerCenter.setContentAreaFilled(false);
-        centerCenter.setBounds(940, 340, 50, 50);
-        label.add(centerCenter);
-
-        centerRight = new JButton();
-        centerRight.setOpaque(false);
-        centerRight.setContentAreaFilled(false);
-        centerRight.setBounds(1355, 340, 50, 50);
-        label.add(centerRight);
+            JLabel label = creatingTheLabels("X");
+            JButton button = creatingTheButtons();
 
 
+            button.addActionListener(e -> {
+                button.setVisible(false);
+                label.setVisible(true);
+            });
+            cardPanel.add(button, "Button");
+            cardPanel.add(label, "Label");
 
-        bottomLeft = new JButton();
-        bottomLeft.setOpaque(false);
-        bottomLeft.setContentAreaFilled(false);
-        bottomLeft.setBounds(525, 670, 50, 50);
-        label.add(bottomLeft);
-
-        bottomCenter = new JButton();
-        bottomCenter.setOpaque(false);
-        bottomCenter.setContentAreaFilled(false);
-        bottomCenter.setBounds(940, 670, 50, 50);
-        label.add(bottomCenter);
-
-        bottomRight = new JButton();
-        bottomRight.setOpaque(false);
-        bottomRight.setContentAreaFilled(false);
-        bottomRight.setBounds(1355, 670, 50, 50);
-        label.add(bottomRight);
+            tttGrid.add(cardPanel);
+        }
 
 
-
-        pTopLeft.setBackground(Color.darkGray);
-        Icon x = new Icon();
-
-
-        frame.revalidate();
-        frame.repaint();
-
-
-        label.add(pTopLeft);
-        label.add(pTopCenter);
-        label.add(pTopRight);
-        label.add(pCenterLeft);
-        label.add(pCenterCenter);
-        label.add(pCenterRight);
-        label.add(pBottomLeft);
-        label.add(pBottomCenter);
-        label.add(pBottomRight);
-
-        frame.revalidate();
-        frame.repaint();
-
-
-
-
-
-
+        background.add(tttGrid, BorderLayout.CENTER);
+        frame.add(background);
+        frame.setVisible(true);
     }
 
 
+    private JButton creatingTheButtons() {
+        JButton button = new JButton();
+        button.setVerticalAlignment(SwingConstants.CENTER);
+        button.setHorizontalAlignment(SwingConstants.CENTER);
+        button.setVisible(false);
+        return button;
+    }
 
 
-
-
-
+    public static JLabel creatingTheLabels(String name) {
+        JLabel label = new JLabel(name, SwingConstants.CENTER);
+        label.setForeground(Color.WHITE);
+        label.setFont(new Font("Arial", Font.BOLD, 120));
+        label.setHorizontalAlignment(SwingConstants.CENTER);
+        label.setVerticalAlignment(SwingConstants.CENTER);
+        label.setVisible(false);
+        return label;
+    }
 
 
     public static void main(String[] args) {
         new GUI();
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+/*pTopLeft = creatingTheLabels("X");
+pTopCenter = creatingTheLabels("X");
+pTopRight = creatingTheLabels("X");
+pCenterLeft = creatingTheLabels("X");
+pCenterCenter = creatingTheLabels("X");
+pCenterRight = creatingTheLabels("X");
+pBottomLeft = creatingTheLabels("X");
+pBottomCenter = creatingTheLabels("X");
+pBottomRight = creatingTheLabels("X");
+
+JLabel[] labels = new JLabel[]{pTopLeft, pTopCenter, pTopRight, pCenterLeft, pCenterCenter, pCenterRight, pBottomLeft, pBottomCenter, pBottomRight};
+        for (JLabel label : labels) {
+        cardPanel.add(label);
+        }
+
+
+topLeft = creatingTheButtons();
+topCenter = creatingTheButtons();
+topRight = creatingTheButtons();
+centerLeft = creatingTheButtons();
+centerCenter = creatingTheButtons();
+centerRight = creatingTheButtons();
+bottomLeft = creatingTheButtons();
+bottomCenter = creatingTheButtons();
+bottomRight = creatingTheButtons();
+
+JButton[] buttons = new JButton[]{topLeft, topCenter, topRight, centerLeft, centerCenter, centerRight, bottomLeft, bottomCenter, bottomRight};
+        for (JButton button : buttons) {
+        cardPanel.add(button);
+        }*/
 
 
