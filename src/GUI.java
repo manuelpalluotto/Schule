@@ -4,101 +4,79 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GUI {
-    private JFrame frame;
-    private ImageIcon spielfeld;
-    private JPanel tttGrid;
-    private JLabel background;
+    private final ImageIcon spielfeld;
+    private final JPanel tttGrid;
+    private final JLabel background;
     private ArrayList<JLabel> labelList;
     private String currentPlayer;
-    private JTextArea introduction;
-    private String playerOne;
-    private String playerTwo;
+    String playerOne;
+    String playerTwo;
+
 
     public GUI() {
+        spielfeld = new ImageIcon(this.getClass().getResource("/emptyTTT.jpg"));
+        //das leere Bild
         currentPlayer = "X";
         labelList = new ArrayList<>();
-        frame = new JFrame();
-        frame.setTitle("TicTacToe");
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.setSize(1920, 1080);
-        frame.setLocationRelativeTo(null);
-
-        introduction = new JTextArea(5, 20);
-        introduction.setSize(450, 300);
-        introduction.setText("Viel Spaß beim nachfolgenden Spiel Tic Tac Toe. Falls du die Regeln nicht kennst, " +
-                "hier einmal erklärt: Jeder Spieler darf nacheinander einen Stein setzen, entweder ein 'X' " +
-                "oder ein 'O'.\" +" +
-                " \"\\n\" + \"Der Spieler, der zuerst\" + " +
-                " \" drei Steine in eine Reihe, senkrecht oder waagrecht, setzen kann hat gewonnen!");
-        introduction.setFont(new Font("Arial", 2, 22));
-        introduction.setLineWrap(true);
-        introduction.setWrapStyleWord(true);
 
 
+        myFrame firstFrame = new myFrame("TicTacToe", 1920, 1137);
+        //frame wird erstellt
 
-        spielfeld = new ImageIcon(this.getClass().getResource("/emptyTTT.jpg"));
-
-        background = new JLabel(spielfeld);
-        background.setLayout(new BorderLayout());
-        background.add(introduction);
+        IntroductionFrame intro = new IntroductionFrame(firstFrame.getFrame());
 
         tttGrid = new JPanel(new GridLayout(3, 3));
         tttGrid.setOpaque(false);
+        //ein Spielfeld 3x3 wird erstellt
 
+        background = new JLabel(spielfeld);
+        //eine Fläche für das Bild wird erstellt
+
+        background.setLayout(new BorderLayout());
+        //das Hintergrundbild eingefügt
+
+        background.add(tttGrid, BorderLayout.CENTER);
+        //das unsichtbare Spielfeld wird auf den Hintergrund gelegt
+
+        firstFrame.getFrame().add(background);
+        //der Hintergrund wird auf den Frame gelegt
+
+
+        //background.add(intro.introduction);
 
         for (int i = 0; i < 9; i++) {
             playing();
         }
-
-
-        background.add(tttGrid, BorderLayout.CENTER);
-        frame.add(background);
-        frame.setVisible(true);
     }
 
     private void playing() {
         JPanel cardPanel = new JPanel(new CardLayout());
         cardPanel.setOpaque(false);
 
-        JLabel label = creatingTheLabels("");
-        JButton button = creatingTheButtons();
+        Labels label = new Labels("");
+        //ein neues Label Objekt mit dem Namen label wird erstellt
+        Buttons button = new Buttons();
+        //ein neues Button Objekt mit dem Namen button wird erstellt
 
-        labelList.add(label);
+        labelList.add(label.getLabel());
+        //das Label wird in eine Liste eingefügt
 
-        button.addActionListener(e -> {
-            label.setText(currentPlayer);
-            label.setVisible(true);
-            button.setVisible(false);
+        button.getButtons().addActionListener(e -> {
+            label.getLabel().setText(currentPlayer);
+            //erst beim Spielzug wird der Text zugewiesen
+
+            label.getLabel().setVisible(true);
+            //das Label wird sichtbar
+
+            button.getButtons().setVisible(false);
+            //der Button wird unsichtbar
 
             currentPlayer = currentPlayer.equals("O") ? "X" : "O";
+            //der jeweils zugewiesene Text wird für den nächsten Zug überschrieben
         });
-        cardPanel.add(button, "Button");
-        cardPanel.add(label, "Label");
+        cardPanel.add(button.getButtons());
+        cardPanel.add(label.getLabel());
 
         tttGrid.add(cardPanel);
-    }
-
-    public static JButton creatingTheButtons() {
-        JButton button = new JButton();
-        button.setVerticalAlignment(SwingConstants.CENTER);
-        button.setHorizontalAlignment(SwingConstants.CENTER);
-        button.setVisible(true);
-        button.setContentAreaFilled(false);
-        button.setBorderPainted(true);
-        return button;
-    }
-
-    public static JLabel creatingTheLabels(String name) {
-        JLabel label = new JLabel(name, SwingConstants.CENTER);
-        label.setForeground(Color.WHITE);
-        label.setFont(new Font("Arial", Font.BOLD, 120));
-        label.setHorizontalAlignment(SwingConstants.CENTER);
-        label.setVerticalAlignment(SwingConstants.CENTER);
-        label.setVisible(false);
-        return label;
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(GUI::new);
     }
 }
