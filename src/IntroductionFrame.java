@@ -7,7 +7,7 @@ public class IntroductionFrame {
     public IntroductionFrame(JFrame frame) {
         Introduction intro = new Introduction(350, 200);
 
-        exit = new ContinueButtons(342, 193, 15, 15);
+        exit = new ContinueButtons(342, 193, 20, 15);
 
         iF = new JFrame();
         iF.setSize(500, 350);

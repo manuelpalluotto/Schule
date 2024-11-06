@@ -18,7 +18,7 @@ public class LoginFrame {
 
         gbc = new GridBagConstraints();
 
-        submit = new Buttons("Continue");
+        submit = new Buttons();
         gbc.gridx = 0;
         gbc.gridy = 2;
         gbc.gridwidth = 3;
