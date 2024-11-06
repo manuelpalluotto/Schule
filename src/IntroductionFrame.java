@@ -4,10 +4,11 @@ import java.awt.*;
 public class IntroductionFrame {
     JFrame iF;
     ContinueButtons exit;
+
     public IntroductionFrame(JFrame frame) {
         Introduction intro = new Introduction(350, 200);
 
-        exit = new ContinueButtons(342, 193, 35, 15);
+        exit = new ContinueButtons(1, 1);
 
         iF = new JFrame();
         iF.setSize(500, 350);
@@ -21,6 +22,7 @@ public class IntroductionFrame {
         iF.setVisible(true);
 
     }
+
     public JFrame getIntroductionFrame() {
         return iF;
     }

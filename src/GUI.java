@@ -1,16 +1,15 @@
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class GUI {
     private final ImageIcon spielfeld;
     private final JPanel tttGrid;
     private final JLabel background;
-    private ArrayList<JLabel> labelList;
-    private String currentPlayer;
     String playerOne;
     String playerTwo;
+    private ArrayList<JLabel> labelList;
+    private String currentPlayer;
 
 
     public GUI() {
@@ -23,7 +22,9 @@ public class GUI {
         myFrame firstFrame = new myFrame("TicTacToe", 1920, 1137);
         //frame wird erstellt
 
-        IntroductionFrame intro = new IntroductionFrame(firstFrame.getFrame());
+        LoginFrame login = new LoginFrame(firstFrame.getFrame());
+
+        IntroductionFrame intro = new IntroductionFrame(login.getlF());
 
         tttGrid = new JPanel(new GridLayout(3, 3));
         tttGrid.setOpaque(false);
@@ -42,8 +43,6 @@ public class GUI {
         //der Hintergrund wird auf den Frame gelegt
 
 
-        //background.add(intro.introduction);
-
         for (int i = 0; i < 9; i++) {
             playing();
         }
@@ -53,9 +52,9 @@ public class GUI {
         JPanel cardPanel = new JPanel(new CardLayout());
         cardPanel.setOpaque(false);
 
-        Labels label = new Labels("");
+        Labels label = new Labels("", 120);
         //ein neues Label Objekt mit dem Namen label wird erstellt
-        Buttons button = new Buttons();
+        Buttons button = new Buttons(10, 5);
         //ein neues Button Objekt mit dem Namen button wird erstellt
 
         labelList.add(label.getLabel());
