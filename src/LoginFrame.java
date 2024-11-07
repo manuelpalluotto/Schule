@@ -16,40 +16,47 @@ public class LoginFrame {
         lF.setLayout(new GridBagLayout());
         lF.setSize(900, 750);
         lF.setLocationRelativeTo(null);
+        lF.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         gbc = new GridBagConstraints();
 
-        u1 = new Labels("Spieler 1: Namen eingeben ->", 5);
-        gbc.gridx = 0;
-        gbc.gridy = 0;
-        gbc.gridwidth = 5;
+        u1 = new Labels("Spieler 1: Namen eingeben ->", gbc.gridwidth, gbc.gridheight);
+        gbc.gridx = 1;
+        gbc.gridy = 2;
+        gbc.gridwidth = 2;
         gbc.gridheight = 1;
         gbc.fill = GridBagConstraints.HORIZONTAL;
+        u1.setNewFont(15);
+        u1.setMyLabelVisible();
         lF.add(u1.getLabel(), gbc);
 
+        u2 = new Labels("Spieler 2, Namen eingeben ->", gbc.gridwidth, gbc.gridheight);
+        gbc.gridx = 1;
+        gbc.gridy = 3;
+        gbc.gridwidth = 2;
+        gbc.gridheight = 1;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        u2.setNewFont(15);
+        u2.setMyLabelVisible();
+        lF.add(u2.getLabel(), gbc);
+
         user1 = new JTextField();
-        gbc.gridx = 0;
-        gbc.gridy = 1;
+        gbc.gridx = 2;
+        gbc.gridy = 2;
         gbc.gridwidth = 5;
         gbc.gridheight = 1;
         gbc.fill = GridBagConstraints.HORIZONTAL;
         lF.add(user1, gbc);
 
-        user2 = new JTextField();
-        gbc.gridx = 0;
-        gbc.gridy = 2;
-        gbc.gridwidth = 5;
-        gbc.gridheight = 1;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        lF.add(user2, gbc);
+//        user2 = new JTextField();
+//        gbc.gridx = 2;
+//        gbc.gridy = 3;
+//        gbc.gridwidth = 5;
+//        gbc.gridheight = 1;
+//        gbc.fill = GridBagConstraints.HORIZONTAL;
+//        lF.add(user2, gbc);
 
-        u2 = new Labels("Spieler 2, Namen eingeben ->", 5);
-        gbc.gridx = 0;
-        gbc.gridy = 3;
-        gbc.gridwidth = 5;
-        gbc.gridheight = 1;
-        gbc.fill = GridBagConstraints.HORIZONTAL;
-        lF.add(u2.getLabel(), gbc);
+
 
         next = new ContinueButtons(10, 2);
 

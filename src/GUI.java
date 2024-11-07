@@ -52,7 +52,7 @@ public class GUI {
         JPanel cardPanel = new JPanel(new CardLayout());
         cardPanel.setOpaque(false);
 
-        Labels label = new Labels("", 120);
+        Labels label = new Labels("", 20, 20);
         //ein neues Label Objekt mit dem Namen label wird erstellt
         Buttons button = new Buttons(10, 5);
         //ein neues Button Objekt mit dem Namen button wird erstellt
