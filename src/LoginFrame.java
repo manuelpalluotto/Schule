@@ -17,8 +17,6 @@ public class LoginFrame {
         lF.setLocationRelativeTo(null);
         lF.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        //blafasel
-
         loginPanel = new JPanel();
         loginPanel.setLayout(null);
         loginPanel.setBackground(Color.black);
