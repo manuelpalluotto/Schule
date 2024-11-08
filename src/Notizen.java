@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+
 
 public class Notizen {
     public static void main(String[] args) {
@@ -34,32 +32,7 @@ public class Notizen {
 //        int b = 10;
 //        int c = 9;
 //        System.out.println(berechneDurchschnitt(a, b, c));
-        for (int i = 0; i < 3; i++) {
-            System.out.println("_|_|_");
-        }
-        char[][] spielfeld = {
-                {'a', 'b', 'c'},
-                {'d', 'e', 'f'},
-                {'g', 'h', 'i'},
-        };
-        int alter = 22;
-        String name = "Max";
-        int x = 3;
-        int a = 2;
-        int b = 1;
-        int c = 3;
-        sternchenVersetzt(x);
-        zahlenPyramideGleichVieleZeilenWieZahl(x);
-        sternchenPyramide(x);
-        abcSpielfeld(spielfeld);
-        bitteVorstellen(name, alter);
-        System.out.println(toUpperOrLowerCase(name));
-        System.out.println(gleichVieleXundY("aaa"));
-        System.out.println(isPrimzahl(x));
-        System.out.println(isAufeinanderfolgend(a, b, c));
-        System.out.println(repeatStr(3, name));
 
-    }
 
     public static boolean setAlarm(boolean employed, boolean vacation) {
         return employed && !vacation;
@@ -249,6 +222,21 @@ public class Notizen {
         } else {
             return str.substring((str.length() / 2), (str.length() / 2) + 1);
         }
+    }
+
+    public static boolean isAufeinanderfolgend(int a, int b, int c) {
+        int[] zahlenReihenfolge = {a, b, c};
+        boolean istAufeinanderfolgend = true;
+        for (int i = 0; i < zahlenReihenfolge.length; i++) {
+            for (int j = 1; j < i; j++) {
+                if (j == i + 1 || j == i - 1) {
+                    istAufeinanderfolgend = true;
+                } else {
+                    istAufeinanderfolgend = false;
+                }
+            }
+        }
+        return istAufeinanderfolgend;
     }
 
 
