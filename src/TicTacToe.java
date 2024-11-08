@@ -12,6 +12,7 @@ public class TicTacToe {
 
         System.out.println("Willkommen Spieler 2, bitte gib deinen Namen ein:");
         String namePlayer2 = playerName();
+        String string = "";
         //Die Methode für Namenseingabe wird aufgerufen
 
         introduction();
