@@ -1,4 +1,4 @@
-import java.util.*;
+
 
 public class Notizen {
     public static void main(String[] args) {
@@ -32,209 +32,124 @@ public class Notizen {
 //        int b = 10;
 //        int c = 9;
 //        System.out.println(berechneDurchschnitt(a, b, c));
-//        String stri = "blahhalb";
-//        System.out.println(getMittlererBuchstabe(stri));
-//          System.out.println(isAufeinanderfolgend(1, 3, 2));
-//        int a = 1; int b = 2;
-//        System.out.println(a + b);
-        String a = "blafasel";
-        System.out.println(a.replace("fas", "bla"));
-        System.out.println("\"\\\\test//\"");
-        double d = 25;
-        System.out.println(Math.sqrt(d));
 
-        System.out.println((int) (Math.random() * 21) - 10);
-        Random r = new Random();
-        System.out.println(r.nextInt(-10, 21));
-        System.out.println(Math.PI);
 
-        //        String stri = "blahhalb";
-//        System.out.println(getMittlererBuchstabe(stri));
+    public static boolean setAlarm(boolean employed, boolean vacation) {
+        return employed && !vacation;
+    }
 
-        char[] altesArray = {'a', 'b', 'c'};
-        meineMethode(altesArray);
-        for (char f : altesArray) {
-            System.out.println(f);
-        }
-        double[] preise = {1.2, 1.8, 1.4, 1.5};
-        for (double e : preise) {
-            System.out.println(e);
-        }
-        Arrays.sort(preise);
-        for (double f : preise) {
-            System.out.println(f);
+    public static String repeatStr(int repeat, String string) {
+        return string.repeat(repeat);
         }
 
-        preise = Arrays.copyOf(preise, preise.length + 1);
-        preise[preise.length - 1] = 1.6;
-        System.out.println(preise[preise.length - 1]);
+    public static long findNextSquare(long sq) {
+//        121 --> 144
+//        625 --> 676
+//        114 --> -1  #  because 114 is not a perfect square
 
-        double[] preises = {1.2, 1.3, 1.4, 1.5, 1.6};
-        System.out.println(Arrays.equals(preise, preises));
+        return 0;
+    }
 
-
-        int[][] x = {{1, 2}, {3, 4}, {5, 6}};
-//        for (int i = 0; i < x.length; i++) {
-//            for (int j = 0; j < x[i].length; j++) {
-//                System.out.print(x[i][j]);
-//            }
-//        }
-        System.out.println(Arrays.deepToString(x));
-
-//        for (int[] y : x) {
-//            for (int z : y) {
-//                System.out.print(z);
-//            }
-//            System.out.println();
-//        }
-
-        List<Integer> bla = new ArrayList<>();
-        for (int i = 2; i < 20; i += 2) {
-            bla.add(i);
+    public static boolean objektArray(Object[] a, Object x) {
+        boolean vorhanden = false;
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] == x) {
+                vorhanden = true;
+            }
         }
-        Collections.sort(bla);              // -> DIE LISTE SORTIEREN
+        return vorhanden;
+    }
 
-        bla.set(2, 100);                    // -> EIN ELEMENT TAUSCHEN
-        for (int t : bla) {
-            System.out.println(t);
+    public static String greeting(String name, String owner) {
+        return owner.equals(name) ? "Hello Boss" : "Hello Guest";
+    }
+
+    public static boolean isAufeinanderfolgend(int a, int b, int c) {
+        int min = Math.min(a, Math.min(b, c));
+        int max = Math.max(a, Math.max(b, c));
+        int middle = (a + b + c) - min - max;
+
+        if (min != middle - 1) {
+            return false;
         }
+        if (middle != max - 1) {
+            return false;
+        }
+        return true;
+    }
 
-        int zahl = bla.get(0);              // -> EIN ELEMENT FINDEN
-        System.out.println(zahl);
+    public static void bitteVorstellen(String name, int alter) {
+        System.out.println(String.format("Mein Name ist %s und ich bin %d Jahre alt. Nach meinem Geburtstag bin ich %d.", name, alter, alter + 1));
 
-        bla.clear();                        // -> ALLE ELEMENTE LÖSCHEN
-        System.out.println(bla.isEmpty());
+    }
 
-//        for (int i = 0; i < 5; i++) {
-//            for (int j = 0; j < 5; j++) {
-//                System.out.print('*');
-//            }
-//            System.out.println();
-//        }
+    public static void abcSpielfeld(char[][] spielfeld) {
+        for (int i = 0; i < spielfeld.length; i++) {
+            for (int j = 0; j < spielfeld[i].length; j++) {
+                System.out.print(spielfeld[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
 
-        int anzahl = 5;
-        for (int i = 0; i < anzahl; i++) {
-            for (int j = 0; j <= i; j++) {
+
+    public static int zollNachFuss(int zoll) {
+        return zoll / 12;
+    }
+
+    public static String toUpperOrLowerCase(String meinString) {
+        return meinString.length() % 2 == 0 ? meinString.toLowerCase() : meinString.toUpperCase();
+    }
+
+    public static boolean isOldEnough(int alterInJahren) {
+        return alterInJahren < 18 ? false : true;
+    }
+
+    public static double minutenNachSekunden(int minuten) {
+        return minuten * 60;
+    }
+
+    public static void sternchenVersetzt(int anzahlZeilen) {
+        for (int i = 0; i < anzahlZeilen; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            System.out.println("***");
+        }
+    }
+
+    public static void zahlenPyramideGleichVieleZeilenWieZahl(int anzahlZeilen) {
+        for (int i = 1; i <= anzahlZeilen; i++) {
+            for (int j = 0; j < i; j++) {
                 System.out.print(i);
             }
             System.out.println();
         }
-            /*  1
-                22
-                333
-                4444
-                55555
-             */
-            char[][] spielfeld = {{'a', 'b', 'c'}, {'d', 'e', 'f'}, {'g', 'h', 'i'}};
-
-
-
-
-
-//        Scanner print = new Scanner(System.in);
-//        int anzahlZeilen = print.nextInt();
-//        for (int i = 1; i <= anzahlZeilen; i++) {
-//            for (int j = i; j < anzahlZeilen; j++) {
-//                System.out.print('.');
-//            }
-//            System.out.println(i);
-//        }
-        //....1
-        //...2
-        //..3
-        //.4
-        //5
-        int f = 5;
-        sternchenPyramide(f);
-        arrayNavigieren(spielfeld);
-
-
-
-
     }
 
-
-    public static void sternchenPyramide(int x) {
-        for (int i = 1; i < x; i++) {
+    public static void sternchenPyramide(int anzahlZeilen) {
+        for (int i = 1; i <= anzahlZeilen; i++) {
             for (int j = 0; j < i; j++) {
                 System.out.print('*');
             }
             System.out.println();
         }
     }
-/*  *
-    **
-    ***
-    ***
- */
-
-    public static void arrayNavigieren(char[]) {
-        char[][] spielfeld = {{'a', 'b', 'c'}, {'d', 'e', 'f'}, {'g', 'h', 'i'}};
-        for (int i = 0; i < spielfeld.length; i++) {
-            for (int j = 0; j < spielfeld[i].length; j++) {
-                System.out.print(spielfeld[i][j]);
-            }
-            System.out.println();
-        }
-    }
-
-    public static String removeTwoChars(String str) {
-
-    }
-
-    public static char[] meineMethode(char[] altesArray) {  // -------------------->
-        char[] neuesArray = new char[altesArray.length];
-        for (int i = 0; i < altesArray.length; i++) {                               //ARRAY KOPIEREN
-            neuesArray[i] = altesArray[i];
-        }
-        return neuesArray;                                  // -------------------->
-    }
-
-
-    public static String toUpperOrLowerCase(String meinString) {
-        if (meinString.length() % 2 == 0) {
-            return meinString.toLowerCase();
-        }
-        if (meinString.length() % 2 != 0) {
-            return meinString.toUpperCase();
-        } else {
-            return meinString;
-        }
-    }
-
-    public static boolean isOldEnough(int alterInJahren) {
-
-        boolean volljährig = alterInJahren < 18 ? false : true;
-        return volljährig;
-    }
-
-    public static double minutenNachSekunden(int minuten) {
-        minuten *= 60;
-        return minuten;
-    }
 
     public static boolean gleichVieleXundY(String str) {
         int countX = 0;
         int countY = 0;
-        boolean bool = true;
         for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == 'y' || str.charAt(i) == 'Y') {
                 countY++;
+                continue;
             }
             if (str.charAt(i) == 'x' || str.charAt(i) == 'X') {
                 countX++;
+                continue;
             }
         }
-        if (countY == countX) {
-            bool = true;
-        } else if (countY != countX) {
-            bool = false;
-        } else if (countY == 0 && countX == 0) {
-            bool = true;
-        } else {
-            bool = false;
-        }
-        return bool;
+        return countX == countY ? true : false;
     }
 
     public static String berechneInitialien(String vorname, String nachname) {
@@ -262,6 +177,15 @@ public class Notizen {
             ausgabe += teilstring + "\n";
         }
         return ausgabe;
+    }
+
+    public static boolean isPrimzahl(int zahl) {
+        for (int i = 2; i < zahl / 2; i++) {
+            if (zahl % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public static double berechneDurchschnitt(int a, int b, int c) {
