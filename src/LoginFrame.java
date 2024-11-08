@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class LoginFrame {
+public class LoginFrame extends JFrame{
     private JFrame lF;
     private JPanel loginPanel;
     private JTextField user1;
@@ -47,13 +47,17 @@ public class LoginFrame {
 
 
 
-        next = new ContinueButtons(10, 2);
+        next = new ContinueButtons();
+        next.setText("Next");
+        next.setBounds(475, 100, 75, 25);
+        next.setBackground(Color.white);
+        next.setVisible(true);
 
-        loginPanel.add(next.getContinueButton());
+        loginPanel.add(next);
         lF.add(loginPanel);
         lF.setVisible(false);
 
-        ContinueButtons.disposerButton(next.getContinueButton(), lF, nextFrame);
+        next.disposerButton(next.getContinueButton(), lF, nextFrame);
 
     }
 

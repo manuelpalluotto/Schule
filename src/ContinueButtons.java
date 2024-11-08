@@ -1,12 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class ContinueButtons {
+public class ContinueButtons extends JButton{
     private JButton cB;
 
-    public ContinueButtons(int width, int height) {
+    public ContinueButtons() {
         cB = new JButton("Continue");
-        cB.setSize(width, height);
         cB.setBackground(Color.white);
         cB.setVisible(true);
 
