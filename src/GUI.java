@@ -52,19 +52,19 @@ public class GUI {
         JPanel cardPanel = new JPanel(new CardLayout());
         cardPanel.setOpaque(false);
 
-        Labels label = new Labels("", 20, 20);
+        Labels label = new Labels();
         //ein neues Label Objekt mit dem Namen label wird erstellt
         Buttons button = new Buttons(10, 5);
         //ein neues Button Objekt mit dem Namen button wird erstellt
 
-        labelList.add(label.getLabel());
+        labelList.add(label);
         //das Label wird in eine Liste eingefügt
 
         button.getButtons().addActionListener(e -> {
-            label.getLabel().setText(currentPlayer);
+            label.setText(currentPlayer);
             //erst beim Spielzug wird der Text zugewiesen
 
-            label.getLabel().setVisible(true);
+            label.setVisible(true);
             //das Label wird sichtbar
 
             button.getButtons().setVisible(false);
@@ -74,7 +74,7 @@ public class GUI {
             //der jeweils zugewiesene Text wird für den nächsten Zug überschrieben
         });
         cardPanel.add(button.getButtons());
-        cardPanel.add(label.getLabel());
+        cardPanel.add(label);
 
         tttGrid.add(cardPanel);
     }
