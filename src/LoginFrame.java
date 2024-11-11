@@ -57,7 +57,10 @@ public class LoginFrame extends JFrame{
         lF.add(loginPanel);
         lF.setVisible(false);
 
-        next.disposerButton(next.getContinueButton(), lF, nextFrame);
+        next.disposerButton(next, lF, nextFrame);
+        next.addActionListener(l -> {
+
+        });
 
     }
 
