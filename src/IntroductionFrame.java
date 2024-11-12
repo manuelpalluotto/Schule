@@ -1,7 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class IntroductionFrame {
+public class IntroductionFrame extends JFrame {
     JFrame iF;
     ContinueButtons exit;
 
@@ -15,15 +15,13 @@ public class IntroductionFrame {
         iF.setLocationRelativeTo(null);
         iF.setLayout(new BorderLayout());
         iF.add(intro.getIntroduction(), BorderLayout.NORTH);
-        iF.add(exit.getContinueButton(), BorderLayout.CENTER);
+        iF.add(exit, BorderLayout.CENTER);
 
-        ContinueButtons.disposerButton(exit.getContinueButton(), iF, frame);
+        exit.disposerButton(exit, iF, frame);
 
         iF.setVisible(true);
 
     }
-
-    public JFrame getIntroductionFrame() {
-        return iF;
-    }
 }
+
+

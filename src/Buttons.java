@@ -1,6 +1,6 @@
 import javax.swing.*;
 
-public class Buttons {
+public class Buttons extends JButton{
     JButton buttons;
 
     public Buttons(int width, int height) {
@@ -13,7 +13,4 @@ public class Buttons {
         buttons.setBorderPainted(true);
     }
 
-    public JButton getButtons() {
-        return buttons;
-    }
 }

@@ -58,13 +58,6 @@ public class LoginFrame extends JFrame{
         lF.setVisible(false);
 
         next.disposerButton(next, lF, nextFrame);
-        next.addActionListener(l -> {
-
-        });
-
     }
 
-    public JFrame getlF() {
-        return lF;
-    }
 }

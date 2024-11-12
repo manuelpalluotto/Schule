@@ -2,7 +2,7 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 
-public class myFrame {
+public class myFrame extends JFrame {
     public JFrame frame;
 
     public myFrame(String title, int width, int height) {
@@ -15,7 +15,4 @@ public class myFrame {
         frame.setVisible(false);
     }
 
-    public JFrame getFrame() {
-        return frame;
-    }
 }

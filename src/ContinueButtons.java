@@ -18,9 +18,4 @@ public class ContinueButtons extends JButton{
         });
         return cB;
     }
-
-    public JButton getContinueButton() {
-        return cB;
-    }
-
 }
