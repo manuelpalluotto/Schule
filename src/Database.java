@@ -4,26 +4,35 @@ import java.sql.Statement;
 import java.sql.ResultSet;
 
 public class Database {
-    public static void main(String[] args) {
-        // Ersetze den Pfad mit dem Pfad zu deiner SQLite-Datenbank
+
+    // Diese Methode stellt eine Verbindung zur SQLite-Datenbank her und führt eine Abfrage aus
+    public void connectToDatabase() {
         String url = "jdbc:sqlite:/home/manuelpalluotto/mydatabase.db";
 
-        // Verbindung zur SQLite-Datenbank herstellen
-        try (Connection conn = DriverManager.getConnection(url)) {
-            if (conn != null) {
-                System.out.println("Verbindung zur Datenbank erfolgreich!");
+        try {
+            Class.forName("org.sqlite.JDBC"); // Lade den SQLite JDBC-Treiber
 
-                // Beispiel: Daten aus einer Tabelle abfragen
-                Statement stmt = conn.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM deineTabelle;");
+            try (Connection conn = DriverManager.getConnection(url)) {  // Verbindung herstellen
+                if (conn != null) {
+                    System.out.println("Verbindung zur Datenbank erfolgreich!");
 
-                // Daten aus der Tabelle ausgeben
-                while (rs.next()) {
-                    System.out.println(rs.getString("deinFeldName"));
+                    Statement stmt = conn.createStatement();  // Erstelle ein Statement
+
+                    // Führe die SQL-Abfrage aus, um Daten aus der "users"-Tabelle zu holen
+                    ResultSet rs = stmt.executeQuery("SELECT * FROM test;");
+
+                    // Schleife durch das ResultSet und gebe die Daten aus
+                    while (rs.next()) {
+                        // Hier wird die Spalte "username" für jedes Ergebnis ausgegeben
+                        System.out.println(rs.getString("username"));
+                    }
                 }
             }
+        } catch (ClassNotFoundException e) {
+            System.out.println("SQLite JDBC-Treiber nicht gefunden.");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            System.out.println("Fehler bei der Verbindung zur Datenbank: " + e.getMessage());
         }
     }
 }
+
