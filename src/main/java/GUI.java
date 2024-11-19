@@ -1,12 +1,36 @@
+import javax.swing.*;
+
 public class GUI {
+    FirstFrame whereIntroductionIsShown;
+    LoginFrame whereUserCanInput;
+    GameFrame whereTheGridIsShown;
+
 
     public GUI() {
         Button nextFrameButton = new Button();
 
-        FirstFrame whereIntroductionIsShown = new FirstFrame();
-        LoginFrame whereUserCanInput = new LoginFrame();
-        GameFrame whereTheGridIsShown = new GameFrame();
+        //den schließen
+        whereIntroductionIsShown = new FirstFrame();
+
+        //den öffnen
+        whereUserCanInput = new LoginFrame();
 
 
+
+
+        whereTheGridIsShown = new GameFrame();
+
+    }
+
+    public JFrame getWhereIntroductionIsShown() {
+        return whereIntroductionIsShown;
+    }
+
+    public JFrame getWhereUserCanInput() {
+        return whereUserCanInput;
+    }
+
+    public JFrame getWhereTheGridIsShown() {
+        return whereTheGridIsShown;
     }
 }
