@@ -2,20 +2,34 @@ import javax.swing.*;
 import java.awt.*;
 
 public class FirstFrameLabel extends JLabel {
+    private IntroTextArea text;
+    private Button nextFrameButton;
+    private GUI gui; // Referenz zur GUI-Klasse
 
-    Button nextFrameButton;
+    public FirstFrameLabel(GUI gui) {
+        // Übergabe der GUI-Instanz
+        this.gui = gui;
 
-
-    public FirstFrameLabel() {
-        setSize(1920, 1137);
-        IntroTextArea text = new IntroTextArea();
+        // Erstelle die Komponenten
         nextFrameButton = new Button();
-        nextFrameButton.disposerButton(getWhereIntroductionIsShown, nextFrameButton, getWhereUserCanInput);
+        text = new IntroTextArea();
+
+        setSize(1920, 1137);
+                nextFrameButton.disposerButton(
+                (FirstFrame)gui.getWhereIntroductionIsShown(),
+                nextFrameButton,
+                gui.whereUserCanInput
+                );
+
         setBackground(Color.BLACK);
         setLayout(null);
         add(nextFrameButton);
         add(text);
+        setVisible(true);
+    }
 
 
+    public JLabel getFirstFrameLabel() {
+        return this;
     }
 }
