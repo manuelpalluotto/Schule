@@ -4,16 +4,22 @@ public class GUI {
     FirstFrame whereIntroductionIsShown;
     LoginFrame whereUserCanInput;
     GameFrame whereTheGridIsShown;
-    private FirstFrameLabel label;
+    FirstFrameLabel label;
+    LoginFramePanel panel;
+
 
     public GUI() {
-        label = new FirstFrameLabel(this);
+
+        panel = new LoginFramePanel(this);
 
         whereIntroductionIsShown = new FirstFrame();
         whereUserCanInput = new LoginFrame();
         whereTheGridIsShown = new GameFrame();
 
+        label = new FirstFrameLabel(this);
         whereIntroductionIsShown.add(label.getFirstFrameLabel());
+
+        whereUserCanInput.add(panel.getLoginFramePanel());
 
     }
 

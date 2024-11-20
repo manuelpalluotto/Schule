@@ -11,10 +11,19 @@ public class Button extends JButton {
         setVisible(true);
     }
 
-    public static void disposerButton(FirstFrame frame, Button button, LoginFrame loginFrame) {
+    public static void fromFirstFrametoLoginFrameButton(FirstFrame frame, Button button, LoginFrame loginFrame) {
+        button.addActionListener(e -> {
+                frame.dispose();
+                loginFrame.setVisible(true);
+                loginFrame.requestFocus();
+        });
+    }
+
+    public static void FromLoginFrameToGameFrameButton(LoginFrame frame, Button button, GameFrame gameFrame) {
         button.addActionListener(e -> {
             frame.dispose();
-            loginFrame.setVisible(true);
+            gameFrame.setVisible(true);
+            gameFrame.requestFocus();
         });
     }
 }

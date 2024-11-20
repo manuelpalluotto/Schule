@@ -14,12 +14,14 @@ public class FirstFrameLabel extends JLabel {
         nextFrameButton = new Button();
         text = new IntroTextArea();
 
-        setSize(1920, 1137);
-                nextFrameButton.disposerButton(
-                (FirstFrame)gui.getWhereIntroductionIsShown(),
+        setLayout(new BorderLayout());
+
+        nextFrameButton.fromFirstFrametoLoginFrameButton(
+                gui.whereIntroductionIsShown,
                 nextFrameButton,
                 gui.whereUserCanInput
-                );
+        );
+
 
         setBackground(Color.BLACK);
         setLayout(null);
