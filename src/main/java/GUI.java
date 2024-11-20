@@ -10,28 +10,30 @@ public class GUI {
 
     public GUI() {
 
+
+        whereIntroductionIsShown = new FirstFrame(this);
+        whereUserCanInput = new LoginFrame(this);
+        whereTheGridIsShown = new GameFrame(this);
+
         panel = new LoginFramePanel(this);
 
-        whereIntroductionIsShown = new FirstFrame();
-        whereUserCanInput = new LoginFrame();
-        whereTheGridIsShown = new GameFrame();
-
         label = new FirstFrameLabel(this);
+
         whereIntroductionIsShown.add(label.getFirstFrameLabel());
 
         whereUserCanInput.add(panel.getLoginFramePanel());
 
     }
 
-    public JFrame getWhereIntroductionIsShown() {
-        return whereIntroductionIsShown;
-    }
-
-    public JFrame getWhereUserCanInput() {
-        return whereUserCanInput;
-    }
-
-    public JFrame getWhereTheGridIsShown() {
-        return whereTheGridIsShown;
-    }
+//    public JFrame getWhereIntroductionIsShown() {
+//        return whereIntroductionIsShown;
+//    }
+//
+//    public JFrame getWhereUserCanInput() {
+//        return whereUserCanInput;
+//    }
+//
+//    public JFrame getWhereTheGridIsShown() {
+//        return whereTheGridIsShown;
+//    }
 }

@@ -18,12 +18,4 @@ public class Button extends JButton {
                 loginFrame.requestFocus();
         });
     }
-
-    public static void FromLoginFrameToGameFrameButton(LoginFrame frame, Button button, GameFrame gameFrame) {
-        button.addActionListener(e -> {
-            frame.dispose();
-            gameFrame.setVisible(true);
-            gameFrame.requestFocus();
-        });
-    }
 }

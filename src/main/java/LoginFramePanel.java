@@ -1,9 +1,11 @@
 import javax.swing.*;
-import java.awt.*;
 
 public class LoginFramePanel extends JPanel {
      GUI gui;
      Button nextFrameButton;
+     JTextField firstUsernameTextField;
+     JTextField secondUsernameTextField;
+
 
     public LoginFramePanel(GUI gui) {
         this.gui = gui;
@@ -11,13 +13,23 @@ public class LoginFramePanel extends JPanel {
         setLayout(null);
 
         nextFrameButton = new Button();
-        nextFrameButton.setText("Next");
-        nextFrameButton.setBounds(800,400, 100, 50);
+        nextFrameButton.setText("Submit");
+        nextFrameButton.setBounds(910,400, 100, 35);
         add(nextFrameButton);
         nextFrameButton.addActionListener(e -> {
            gui.whereUserCanInput.dispose();
            gui.whereTheGridIsShown.setVisible(true);
         });
+
+        firstUsernameTextField = new JTextField();
+        firstUsernameTextField.setBounds(760,330, 400, 35);
+
+        secondUsernameTextField = new JTextField();
+        secondUsernameTextField.setBounds(760,365, 400, 35);
+
+        add(firstUsernameTextField);
+        add(secondUsernameTextField);
+
 
         setVisible(true);
     }

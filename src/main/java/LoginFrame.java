@@ -6,13 +6,17 @@ public class LoginFrame extends JFrame {
     LoginFramePanel panel;
     GUI gui;
 
-    public LoginFrame() {
+    public LoginFrame(GUI gui) {
         this.gui = gui;
+
         setLayout(new BorderLayout());
+        setUndecorated(true);
+
         screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         setSize(screenSize.width, screenSize.height -30);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setResizable(false);
         panel = new LoginFramePanel(gui);
 
         add(panel, BorderLayout.CENTER);
