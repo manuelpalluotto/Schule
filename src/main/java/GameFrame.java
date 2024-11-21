@@ -7,9 +7,11 @@ public class GameFrame extends JFrame {
     Dimension screenSize;
     JLabel backgroundLabel;
     JPanel gridPanel;
-    JPanel cardPanel;
+    String currentPlayer;
 
     public GameFrame(GUI gui) {
+        currentPlayer = "X";
+
         this.gui = gui;
 
         screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -18,9 +20,9 @@ public class GameFrame extends JFrame {
         setResizable(false);
         //setUndecorated(true);
 
-        cardPanel = new JPanel(new CardLayout());
 
-        backgroundLabel = new JLabel(new ImageIcon(GameFrame.class.getResource("/emptyTTT.jpg")));
+
+        backgroundLabel = new JLabel(new ImageIcon(GameFrame.class.getResource("/TTT3.png")));
         backgroundLabel.setLayout(new BorderLayout());
 
         gridPanel = new JPanel(new GridLayout(3, 3));
@@ -29,24 +31,38 @@ public class GameFrame extends JFrame {
         ArrayList<JButton> playButtons = new ArrayList<>();
         ArrayList<JLabel> playLabels = new ArrayList<>();
 
+
         for (int i = 0; i < 9; i++) {
+            CardLayout cardLayout = new CardLayout();
+            JPanel cardPanel = new JPanel(cardLayout);
+            cardPanel.setOpaque(false);
+
+            JLabel playLabel = new JLabel("");
+            playLabel.setFont(new Font("Times new Roman", Font.BOLD, 50));
+            playLabel.setVerticalAlignment(SwingConstants.CENTER);
+            playLabel.setHorizontalAlignment(SwingConstants.CENTER);
+            playLabel.setForeground(Color.WHITE);
+
+            playLabels.add(playLabel);
+
+
             JButton playButton = new JButton();
             playButtons.add(playButton);
             playButton.setContentAreaFilled(false);
-            playButton.addActionListener(e -> {
-                playButton.setVisible(false);
-            });
-            gridPanel.add(playButton);
-        }
+            playButton.setBorderPainted(false);
+            cardPanel.add(playButton);
+            cardPanel.add(playLabel);
 
-        for (int i = 0; i < 9; i++) {
-            JLabel playLabel = new JLabel();
-            playLabels.add(playLabel);
+            playButton.addActionListener(e -> {
+                cardLayout.previous(cardPanel);
+                playLabel.setText(currentPlayer);
+                currentPlayer = currentPlayer.equals("X") ? "O" : "X";
+            });
+            gridPanel.add(cardPanel);
         }
 
         backgroundLabel.add(gridPanel);
-        cardPanel.add(backgroundLabel);
-        add(cardPanel);
+        add(backgroundLabel);
         setVisible(false);
     }
 }
