@@ -17,6 +17,7 @@ public class FirstFrame extends JFrame{
         setUndecorated(true);
         setLocationRelativeTo(null);
         setResizable(false);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         setVisible(true);

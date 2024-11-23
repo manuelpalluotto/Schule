@@ -17,6 +17,7 @@ public class LoginFrame extends JFrame {
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         panel = new LoginFramePanel(gui);
 
         add(panel, BorderLayout.CENTER);
