@@ -11,11 +11,5 @@ public class Button extends JButton {
         setVisible(true);
     }
 
-    public static void fromFirstFrametoLoginFrameButton(FirstFrame frame, Button button, LoginFrame loginFrame) {
-        button.addActionListener(e -> {
-                frame.dispose();
-                loginFrame.setVisible(true);
-                loginFrame.requestFocus();
-        });
-    }
+
 }
